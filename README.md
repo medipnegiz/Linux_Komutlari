@@ -1,12 +1,13 @@
-# Linux_Komutlari
+# LINUX – PLUS KOMUTLARI
 
-LINUX – PLUS KOMUTLARI
-
-•	Sudo !!
-Bir önce yazilan komuta isaret ederek yönetici olarak calistirir
-
-•	Sudo su
-Root kullanici olarak baglanir ve simge “#” dönüsür
+### • Bir önce yazilan komuta isaret ederek yönetici olarak calistirir
+```bash
+sudo !!
+```
+### • Root kullanici olarak baglanir ve simge “#” dönüsür
+```bash
+sudo su
+```
 
 •	Su ec2-user
 “Su” siwicht User demektir. Bu komut ile kullanici profilini gecis yapilir
