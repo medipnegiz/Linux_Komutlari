@@ -1,5 +1,6 @@
 # LINUX – PLUS KOMUTLARI
 
+
 ### • Bir önce yazilan komuta isaret ederek yönetici olarak calistirir
 ```bash
 sudo !!
