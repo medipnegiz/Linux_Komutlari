@@ -6,6 +6,20 @@
 </p>
 <hr>
 
+# Index 
+
+* [Genel Komutlar](#genel-komutlar)
+* [Ortam Degiskenleri](#ortam-degiskenleri)
+* [Kullanici Komutlari](#kullanici-komutlari)
+* [Paket Yükleme Islemleri](#paket-yükleme-islemleri)
+* [Filtre Kullanim Komutlari](#filtre-kullanim-komutlari)
+* [Sed, Awk ve Crontab Komutlari](#sed-awk-ve-crontab-komutlari)
+* [Shell Script Komutlari](#shell-script-komutlari)
+* [Dersteki Calismalar](#dersteki-calismalar)
+
+<hr>
+
+# GENEL KOMUTLAR
 
 ### • Bir önce yazilan komuta isaret ederek yönetici olarak calistirir
 ```bash
@@ -1075,3 +1089,5 @@ do
 done
 echo $sonuc
 ```
+
+## Go to [Index](#index)
