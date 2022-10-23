@@ -764,85 +764,112 @@ echo –e “ahmet \n murat”
 
 # SED, AWK VE CRONTAB KOMUTLARI
 
-•	Sed –i ‘s/linux/ubuntu/’ ali.txt
-Bu komut ali dosyasi icindeki ilk “linux” ifadesini bulur ve onu “ubuntu” olarak degistirir. Büyük-kücük harf duyarli degil. (-i) degisikligi dosyaya uygular ve kaydeder.
+### • Bu komut ali.txt dosyasi icindeki ilk “linux” ifadesini bulur ve onu “ubuntu” olarak degistirir. Büyük-kücük harf duyarli degil. (-i) degisikligi dosyaya uygular ve kaydeder
+```bash
+sed –i ‘s/linux/ubuntu/’ ali.txt
+```
 
-•	Sed ‘s/linux/ubuntu/ig’ ali.txt
-Ali dosyasindaki bütün “linux” ifadelerini “ubuntu” olarak degistirir. (i) büyük-kücük duyarsiz sekilde, (g) bütün ifadeleri degistir
+### • Ali.txt dosyasindaki bütün “linux” ifadelerini “ubuntu” olarak degistirir. (i) büyük-kücük duyarsiz, (g) bütün ifadeleri degistir
+```bash
+sed ‘s/linux/ubuntu/ig’ ali.txt
+```
 
-•	Sed ‘s/linux/ubuntu/2’ ali.txt
-Ali dosyasindaki buldugu 2. “linux” ifadesini “ubuntu” yapar
+### • Ali.txt dosyasindaki buldugu 2. “linux” ifadesini “ubuntu” yapar
+```bash
+sed ‘s/linux/ubuntu/2’ ali.txt
+```
 
-•	Sed ‘3 s/linux/ubuntu/g’ ali.txt
-Sadece 3. satirdaki bütün “linux” ifadelerini “ubuntu” olarak degistirir.
+### • Sadece 3. satirdaki bütün “linux” ifadelerini “ubuntu” olarak degistirir
+```bash
+sed ‘3 s/linux/ubuntu/g’ ali.txt
+```
+
+### • Bu komut da “cat” komutu gibi dosya listelemek icin kullanilir
+```bash
+awk ‘{print}’ ahmet.txt
+```
+
+### • Ahmet dosyasinin sadece 3. Satirini listeler
+```bash
+awk ‘{print $3}’ ahmet.txt
+```
+
+### • Ahmet dosyasinin icindeki "aksam" ile baslayan bütün satirlari listeler
+```bash
+awk ‘/aksam/ {print $0}’ ahmet.txt
+```
+
+### • Ahmet dosyasinin 7. Sütununda “can” ifadesi varsa o satiri komple listeler
+```bash
+awk '{ if($7 == "can") print $0}' ahmet.txt
+```
+
+### • Zaman olarak planli yapmak istedigimiz islemler icin crontab dosyasini düzenlemek icin kullanilan bir komuttur
+```bash
+crontab –e
+```
 
 
-•	Awk ‘{print}’ ahmet.txt
-Bu komut da “cat” komutu gibi dosya listelemek icin kullanilir
-
-•	Awk ‘{print $3}’ ahmet.txt
-Ahmet dosyasinin sadece 3. Satirini listeler.
-
-•	Awk ‘/aksam/ {print $0}’ ahmet.txt
-Ahmet dosyasinin icindeki aksam ile baslayan bütün satirlari listeler
-
-•	awk '{ if($7 == "can") print $0}' ahmet.txt
-Ahmet dosyasinin 7. Sütununda “can” ifadesi varsa o satiri komple listeler.
-
-•	Crontab –e
-Zaman olarak planli yapmak istedigimiz islemler icin crontab dosyasini düzenlemek icin kullanilan bir komuttur. 
-
+### • Yildizlar zaman bakimindan ayarlamak icin kullanilir. Hicbir deger girilmezse dakika basi islem yapar
+```bash
 * * * * *  date >> /home/ec2-user/veriler.log 
-1 2 3 4 5       yildizlar zaman bakimindan ayarlamak icin kullanilir. Hicbir deger girilmezse dakika basi islem yapar.
-o	1    bu kisim dakika icin kullanilir
-o	2    bu kisim saat girmek icin kullanilir
-o	3    bu kisim ayin kacinda onu belirtmek icin kullanilir
-o	4    bu kisim ay girmek icin kullanilir
-o	5    bu kisim ayin gününü belirtmek icin kullanilir
+```
+```bash
+* * * * *
+1 2 3 4 5
+o 1  		  	bu kisim dakika icin kullanilir
+o 2  		  	bu kisim saat girmek icin kullanilir
+o 3  		  	bu kisim ayin kacinda onu belirtmek icin kullanilir
+o 4  		  	bu kisim ay girmek icin kullanilir
+o 5  		  	bu kisim ayin gününü belirtmek icin kullanilir
+```
 
-•	Crontab –e
-25 12 * * * sudo yum install git –y
-•	Bu komut saat 12:25 te git uygulamasini yükler
+### • Bu komut saat 12:25 te git uygulamasini yükler
+```bash
+crontab –e
+25 12 * * * sudo yum install git –y 
+```
 
-•	Crontab –ls
-Crontab dosyasinda kayitli komutlari listelemek icin kullanilir
+### • Crontab dosyasinda kayitli komutlari listelemek icin kullanilir
+```bash
+crontab –ls
+```
 
+# SHELL SCRIPT KOMUTLARI
 
+### • Matematik islemlerinde sembollerin yerine kullanilan komutlar
+```bash
+o –lt		 	<
+o –gt			>
+o –le			<=
+o –ge			>=
+o -eq			==
+o –ne			!=
+o –z			bos string
+o –n			bos olmayan string
+```
 
+### • Bir Linux dosyasıyla ilişkili çeşitli özellikleri test etmek için kullanılabilecek operatörler
+```bash
+o –d			directory
+o –e			exist
+o –f	 		Ordinary file 
+o –r			readable 
+o –s	 		size is > 0 bytes
+o –w			writable
+o –x			executable
+```
 
-SHELL SCRIPT KOMUTLARI
-
-
-•	Matematik islemlerinde sembollerin yerine kullanilan komutlar
-o	–lt	 	<
-o	–gt		>
-o	–le		<=
-o	–ge		>=
-o	–eq		==
-o	–ne		!=
-o	–z		bos string
-o	–n		bos olmayan string
-
-•	Bir Linux dosyasıyla ilişkili çeşitli özellikleri test etmek için kullanılabilecek birkaç operatörler.
-o	–d		directory
-o	–e		exist
-o	–f 		Ordinary file 
-o	–r		readable 
-o	–s 		size is > 0 bytes
-o	–w		writable
-o	–x		executable
-
-
-•	“if .. then” komut satiri kullanimi bu sekildedir. Komutun calismasi icin dosyanin “chmod +x” ile calistirilabilir hale getirilmesi gerekir.
-
+### • “if .. then” komut satiri kullanimi bu sekildedir. Komutun calismasi icin dosyanin “chmod +x” ile calistirilabilir hale getirilmesi gerekir
+```bash
 #!/bin/bash
-              if ["foo" = "foo"]; then
-  	echo “bunlar birbirine esit”
-              fi
+if ["foo" = "foo"]; then
+	echo “bunlar birbirine esit”
+fi
+```
 
-
-•	“if .. then .. else” komut satiri kullanimi bu sekildedir.
-
+### • “if .. then .. else” komut satiri kullanimi bu sekildedir
+```bash
 if [ $num -eq 5  ] 	 #  (($num + 5)) “aritmetik(toplama vb.) islem varsa kullanilir”
 then
 	echo “sayi 5 e esittir”
@@ -852,9 +879,10 @@ then
 else
     echo "sayi 5 ten fazla"
 fi
+```
 
-•	Ic ice “if..then..else” komut kullanimi bu sekildedir.
-
+### • Ic ice “if..then..else” komut kullanimi bu sekildedir
+```bash
 #!/bin/bash
 read -p "Bir sayi girin: " SAYI
 if [ $SAYI -gt 10 ]
@@ -869,57 +897,67 @@ then
 else
         echo "Sayi 10 dan kücük"
 fi
+```
 
-•	“If..then..else” dosyasinda “degil, or, and” kullanimi asagidaki ifadeler ile olur.
-o	! 		degil
-o	&&		and
-o	||		or
-
+### • “If..then..else” dosyasinda “degil, or, and” kullanimi asagidaki ifadeler ile olur
+```bash
+o !	 		degil
+o &&			and
+o ||			or
+```
+```bash
 #!/bin/bash
 read -p "Adinizi girin: " NAME
-read –s –p "Sifreinizi girin: " SIFRE	# “-s” sifre girerken görünmemesini saglar
+read –s –p "Sifreinizi girin: " SIFRE		# “-s” sifre girerken görünmemesini saglar
 if [ $NAME = $(whoami) ] && [ $SIFRE = 12345 ]
 then
         echo -e "\nWelcome $(whoami)"		# “-e” icerideki \n gibi islemleri aktif eder
 else
         echo -e "\nYanlis giris"
 fi
-•	“For” döngü kullanimi bu sekildedir. Bir dize içindeki bir dizi 'kelime' ve ‘sayilar’ üzerinde yineleme yapmanızı sağlar.
+```
+
+### • “For” döngü kullanimi bu sekildedir. Bir dize içindeki bir dizi 'kelime' ve ‘sayilar’ üzerinde yineleme yapmanızı sağlar
+```bash
 #!/bin/bash
-for i in $( ls ); do	# $(ls) yada `ls`   ikisi de ayni.   `pwd`/*   klasördeki tüm dosyalarin konumlari
-   echo item: $i
+for i in $( ls ); do		# $(ls) yada `ls`  --> ikisi de aynikomut.   
+   echo item: $i		# `pwd`/*  --> klasördeki tüm dosyalarin konumlarini gösterir
 done
+```
 
 ------------------------------------------------------------------
 
+```bash
 A =  (“S3” “EC2” “Lambda” “Glacier” “CloudFront” “Kinesis”)
-for x in S3 EC2 Lambda Glacier CloudFront Kinesis	# $x[@]  tüm listeyi gezer. @ tüm liste anlamindadir.
+for x in S3 EC2 Lambda Glacier CloudFront Kinesis	
 do
-  echo "Amazon Service: $x"
+  echo "Amazon Service: $x"			# $x[@] --> tüm listeyi gezer. @ tüm liste anlamindadir
 done
+```
 
 ------------------------------------------------------------------ 
 
+```bash
 #!/bin/bashs
 echo "Numbers:"
 for number in {1..10}	      # 1 den 10 a kadar sayi üretir	
 do
    echo $number
 done
+```
 
-
-•	“While” kosul dogru ise islem yapar, yanlis olursa islemi sonlandirir. “done” komutu ile döndügen cikilir.
-
+### • “While” kosul dogru ise islem yapar, yanlis olursa islemi sonlandirir. “done” komutu ile döndügen cikilir
+```bash
 #!/bin/bash
 COUNTER=0
  while [  $COUNTER -lt 10 ]; do
      echo The counter is $COUNTER
      let COUNTER=++COUNTER		# ((COUNTER++) ifadesi de kullanilabilir
 done
+```
 
-
-•	“Until” kosul yanlis ise islem yapar, dogru oldugu zaman döngüden cikar. “done” komutu ile döngüden cikilir.
-
+### • “Until” kosul yanlis ise islem yapar, dogru oldugu zaman döngüden cikar. “done” komutu ile döngüden cikilir
+```bash
 #!/bin/bash
 number=1
 until [[ $number -ge 10 ]];do
@@ -927,10 +965,10 @@ until [[ $number -ge 10 ]];do
         ((number++))
 done
 echo "Now, number is $number"
+```
 
-
-•	“Select..case..esac” kullanimi asagidadir. Kendisi otomatik numaralandirir ve  secimi uygular. (If ifadesinin farkli bir versiyonudur)
-
+### • “Select..case..esac” kullanimi asagidadir. Kendisi otomatik numaralandirir ve  secimi uygular. (If ifadesinin farkli bir versiyonudur)
+```bash
 #!/bin/bash
 read -p "ilk numarayi girin: " ilk_num
 read -p "ikinci numarayi girin: " iki_num
@@ -960,10 +998,10 @@ do
         ;;
     esac
 done
+```
 
-
-•	Fonksiyon tanimlamasi bu sekildedir. Calistirmak icin sadece fonksiyonu cagirmak yeterlidir.
-
+### • Fonksiyon tanimlamasi bu sekildedir. Calistirmak icin sadece fonksiyonu cagirmak yeterlidir
+```bash
 #!/bin/bash
 function cikis () {
    exit
@@ -973,24 +1011,22 @@ function hello () {
 }
 Hello
 cikis
+```
+
 ---------------------------------------------
 
+```bash
 #!/bin/bash
 welcome (){		# function yazmadan direk fonksiyon ismi verilebilir
     echo "Welcome to Linux Lesson"
 }
 welcome
+```
 
+# DERSTEKI CALISMALAR
 
-
-
-
-
-
-
-DERSTEKI CALISMALAR
-
-•	Önce klasör var mi diye kontrol ediyoruz, eger klasör yoksa o isimde klasör olusturuyor
+### • Önce klasör var mi diye kontrol ediyoruz, eger klasör yoksa o isimde klasör olusturuyor
+```bash
 #!/bin/bash
 if [ -z "$(ls | grep edip)" ]; then	# “-z” bos ise anlamindadir.
         mkdir edip
@@ -998,21 +1034,23 @@ if [ -z "$(ls | grep edip)" ]; then	# “-z” bos ise anlamindadir.
 else
         echo "Böyle bir klasör var"
 fi
+```
 
-
-•	Istenilen program var mi diye version üzerinden kontrol ediyor yoksa indiriyor
+### • Istenilen program var mi diye version üzerinden kontrol ediyor yoksa indiriyor
+```bash
 #!/bin/bash
 git --version
 if [[ $? == 0 ]]
 then
-          echo " Already exits"
+	echo " Already exits"
 else
-          yum update -y
-  	    yum install git
+        yum update -y
+	yum install git
 fi
+```
 
-
-•	Girilen sayinin büyük olup olmamasina göre islem yapan fonksiyon
+### • Girilen sayinin büyük olup olmamasina göre islem yapan fonksiyon
+```bash
 #!/bin/bash
 read -p "Sayi girin..: " num
 sayi () {
@@ -1025,9 +1063,10 @@ sayi () {
 }
 sayi
 echo $?
+```
 
-
-•	100 e kadar olan tam sayilarin toplamini veren program
+### • 100 e kadar olan tam sayilarin toplamini veren program
+```bash
 #!/bin/bash
 sonuc=0
 for i in {1..100}
@@ -1035,3 +1074,4 @@ do
     ((sonuc=sonuc+i))
 done
 echo $sonuc
+```
