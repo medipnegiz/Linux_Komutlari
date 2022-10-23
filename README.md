@@ -5,62 +5,96 @@
 ```bash
 sudo !!
 ```
+
 ### • Root kullanici olarak baglanir ve simge “#” dönüsür
 ```bash
 sudo su
 ```
 
-•	Su ec2-user
-“Su” siwicht User demektir. Bu komut ile kullanici profilini gecis yapilir
+### • “Su” Switch-User demektir. Bu komut ile kullanici profilini gecis yapilir
+```bash
+Su ec2-user
+```
 
-•	Man ls
-Komutun manuel kitapcigini görüntülemek icin kullanilir
+### • Komutun manuel kitapcigini görüntülemek icin kullanilir
+```bash
+Man ls
+```
 
-•	Info ls
-Komutun kullanimi hakkinda bilgi almak icin kullanilir
+### • Komutun kullanimi hakkinda bilgi almak icin kullanilir
+```bash
+Info ls
+```
 
-•	Whatis ls
-Komutun islevi hakkinda kisa bilgi almak icin kullanilir
+### • Komutun islevi hakkinda kisa bilgi almak icin kullanilir
+```bash
+Whatis ls
+```
 
-•	Apropos ls
-Komutlarin tam bir listesini almak icin kullanilir
+### • Komutlarin tam bir listesini almak icin kullanilir
+```bash
+Apropos ls
+```
 
-•	Ls --help
-Komutun ve ek parametrelerinin hakkinda bilgi almak icin kullanilir
+### • Komutun ve ek parametrelerinin hakkinda bilgi almak icin kullanilir
+```bash
+Ls --help
+```
 
-•	Head test.txt
-Dosyanin ilk 10 satirini görüntülemek icin kullanilir
+### • Dosyanin ilk 10 satirini görüntülemek icin kullanilir
+```bash
+Head test.txt
+```
 
-•	Head -4 test.txt
-Dosyanin ilk 4 satirini listelemek icin kullanilir
+### • Dosyanin ilk 4 satirini listelemek icin kullanilir
+```bash
+Head -4 test.txt
+```
 
-•	Tail test.txt
-Dosyanin son 10 satirini görüntülemek icin kullanilir
+### • Dosyanin son 10 satirini görüntülemek icin kullanilir
+```bash
+Tail test.txt
+```
 
-•	Tail –3 test.txt
-Dosyanin son 3 satirini görüntülemek icin kullanilir
+### • Dosyanin son 3 satirini görüntülemek icin kullanilir
+```bash
+Tail –3 test.txt
+```
 
-•	Cat test.txt
-Dosyanin icini görüntülemek icin kullanilir
+### • Dosyanin icini görüntülemek icin kullanilir
+```bash
+Cat test.txt
+```
 
-•	Cat test1.txt test2.txt
-Dosyalari birlestirerek görüntülemek icin kullanilir. 
+### • Dosyalari birlestirerek görüntülemek icin kullanilir
+```bash
+Cat test1.txt test2.txt
+```
 
-•	Cat test1.txt test2.txt > file
-Iki dosyayi birlestirir ve “file” isminde dosya olusturarak icine kaydeder
+### • Iki dosyayi birlestirir ve “file” isminde dosya olusturarak icine kaydeder
+```bash
+Cat test1.txt test2.txt > file
+```
 
-•	Cat > deneme.txt
-“Deneme” isminde dosya olusturur ve komut satirindan icine ekleme yapilir. (Ctrl + d ile cikis yapilir)
+### • “Deneme” isminde dosya olusturur ve komut satirindan icine ekleme yapilir (Ctrl + d ile cikis yapilir)
+```bash
+Cat > deneme.txt
+```
 
+### • “Deneme” dosyasi icindekileri “test” adinda bir dosya olusturarak icine kopyalar
+```bash
+Cat deneme.txt > test.txt
+```
 
-•	Cat deneme.txt > test.txt
-“Deneme” dosyasi icindekileri “test” adinda bir dosya olusturarak icine kopyalar
+### • Dosya icerigini tersten baslayarak görüntüler
+```bash
+Tac deneme.txt
+```
 
-•	Tac deneme.txt
-Dosya icerigini tersten baslayarak görüntüler
-
-•	More deneme.txt
-Dosya icerigini bir seferde bir ekran olarak görüntüler
+### • Dosya icerigini bir seferde bir ekran olarak görüntüler
+```bash
+More deneme.txt
+```
 
 •	Ls --help | more
 Tüm yazilari indirir ama satir satir inerek gösterir
