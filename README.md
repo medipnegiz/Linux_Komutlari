@@ -1,4 +1,10 @@
-# LINUX – PLUS KOMUTLARI
+# A'DAN Z'YE LINUX KOMUTLARI [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
+<hr>
+<p align="center">
+	<img alt="Git" src="https://logodownload.org/wp-content/uploads/2022/05/linux-logo.png" height="190" width="555">
+</p>
+<hr>
 
 
 ### • Bir önce yazilan komuta isaret ederek yönetici olarak calistirir
@@ -13,137 +19,137 @@ sudo su
 
 ### • “Su” Switch-User demektir. Bu komut ile kullanici profilini gecis yapilir
 ```bash
-Su ec2-user
+su ec2-user
 ```
 
 ### • Komutun manuel kitapcigini görüntülemek icin kullanilir
 ```bash
-Man ls
+man ls
 ```
 
 ### • Komutun kullanimi hakkinda bilgi almak icin kullanilir
 ```bash
-Info ls
+info ls
 ```
 
 ### • Komutun islevi hakkinda kisa bilgi almak icin kullanilir
 ```bash
-Whatis ls
+whatis ls
 ```
 
 ### • Komutlarin tam bir listesini almak icin kullanilir
 ```bash
-Apropos ls
+apropos ls
 ```
 
 ### • Komutun ve ek parametrelerinin hakkinda bilgi almak icin kullanilir
 ```bash
-Ls --help
+ls --help
 ```
 
 ### • Burada “-p” parametresi ile eger “deneme” klasörü yoksa hata vermez, olusturur ve onun da icine “edip” klasörü olusturur
 ```bash
-Mkdir –p /home/deneme/edip
+mkdir –p /home/deneme/edip
 ```
 
 ### • Dosyanin ilk 10 satirini görüntülemek icin kullanilir
 ```bash
-Head test.txt
+head test.txt
 ```
 
 ### • Dosyanin ilk 4 satirini listelemek icin kullanilir
 ```bash
-Head -4 test.txt
+head -4 test.txt
 ```
 
 ### • Dosyanin son 10 satirini görüntülemek icin kullanilir
 ```bash
-Tail test.txt
+tail test.txt
 ```
 
 ### • Dosyanin son 3 satirini görüntülemek icin kullanilir
 ```bash
-Tail –3 test.txt
+tail –3 test.txt
 ```
 
 ### • Dosyanin icini görüntülemek icin kullanilir
 ```bash
-Cat test.txt
+cat test.txt
 ```
 
 ### • Dosyalari birlestirerek görüntülemek icin kullanilir
 ```bash
-Cat test1.txt test2.txt
+cat test1.txt test2.txt
 ```
 
 ### • Iki dosyayi birlestirir ve “file” isminde dosya olusturarak icine kaydeder
 ```bash
-Cat test1.txt test2.txt > file
+cat test1.txt test2.txt > file
 ```
 
 ### • “Deneme” isminde dosya olusturur ve komut satirindan icine ekleme yapilir (Ctrl + d ile cikis yapilir)
 ```bash
-Cat > deneme.txt
+cat > deneme.txt
 ```
 
 ### • “Deneme” dosyasi icindekileri “test” adinda bir dosya olusturarak icine kopyalar
 ```bash
-Cat deneme.txt > test.txt
+cat deneme.txt > test.txt
 ```
 
 ### • Dosya icerigini tersten baslayarak görüntüler
 ```bash
-Tac deneme.txt
+tac deneme.txt
 ```
 
 ### • Dosya icerigini bir seferde bir ekran olarak görüntüler
 ```bash
-More deneme.txt
+more deneme.txt
 ```
 
 ### • Tüm yazilari indirir ama satir satir inerek gösterir
 ```bash
-Ls --help | more
+ls --help | more
 ```
 
 ### • Bir dosyanin icerigini görüntülememize ve dosya icerisinde gezinmemizi saglar
 ```bash
-Less deneme.txt
+less deneme.txt
 ```
 
 ### • Terminal kadar yazi gösterir ve satir satir inilir. “q” ile cikilir
 ```bash
-Ls --help | less
+ls --help | less
 ```
 
 ### • Bulundugumuz dizinde bulunan tüm dosyalari alt klasörler ile birlikte listeler
 ```bash
-Find .
+find .
 ```
 
 ### • Home klasörü icerisindeki test.txt dosyasinin tam uzantisini görüntüler
 ```bash
-Find /home –name test.txt
+find /home –name test.txt
 ```
 
 ### • Lesson klasörü icindeki “den” ile baslayan bütün dosyalari listeler (Büyük-kücük harf duyarli)
 ```bash
-Find /lesson –name den\*
+find /lesson –name den\*
 ```
 
 ### • Lesson klasörü icindeki “.png” ile biten bütün dosyalari listeler
 ```bash
-Find /lesson –name *.png
+find /lesson –name *.png
 ```
 
 ### • Lesson klasörü icindeki “den” ile baslayan (büyük-kücük harf fark etmez) bütün dosyalari listeler
 ```bash
-Find /lesson –iname den\*
+find /lesson –iname den\*
 ```
 
 ### • Dosya icerisinde “naber” kelimesi olan tüm satiri görüntüler
 ```bash
-Grep ‘naber’ deneme.txt
+grep ‘naber’ deneme.txt
 ```
 ```bash
 o	Grep –i			 	Büyük/kücük harf duyarsiz sekilde görüntüler
@@ -158,12 +164,12 @@ o	Grep “dur$”			sonu “dur “ ile biten satirlari listeler
 
 ### • İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler (-l : listele,   -R : alt dosya ve klasörler dahil)
 ```bash
-Grep –iRl ‘naber’ 
+grep –iRl ‘naber’ 
 ```
 
 ### • İcinde ‘is’ olan bütün satirlari listeler. Dosya farketmeksizin
 ```bash
-Grep ‘is’ * 
+grep ‘is’ * 
 ```
 
 ### • Dosya icinde ‘ali’ ile eslesen satiri ve öncesindeki 3 satir daha listeler
@@ -203,37 +209,37 @@ cd --help | grep –C3 ‘director’
 
 ### • Sonu ‘.txt’ ile biten dosyalari listelemek icin kullanilir
 ```bash
-Ls –R | grep .txt
+ls –R | grep .txt
 ```
 
 ### • Locate komutunu yükler. Bu komut ile tüm bilgisayarda konum belirtmeden arama yapilir
 ```bash
-Sudo apt-get install mlocate
+sudo apt-get install mlocate
 ```
 
 ### • Tüm bilgisayarda “deneme.txt” ara ve konumunu yazdirir
 ```bash
-Locate deneme.txt
+locate deneme.txt
 ```
 
 ### • Locate komutu günceller, böylece yeni eklenen veya silinen dosyalarin komunu yazdirilabilir
 ```bash
-Sudo updatedb
+sudo updatedb
 ```
 
 ### • Daha önce kullanilan “find” komutlarini listeler
 ```bash
-History | grep ‘find’
+history | grep ‘find’
 ```
 
 ### • Bu komutun hangi dizinde kayitli oldugunu gösterir
 ```bash
-Which pwd
+which pwd
 ```
 
 ### • Bu komut dosyasinin nerede oldugunu gösterir
 ```bash
-Whereis pwd
+whereis pwd
 ```
 
 ### • “wget” komutu ilgili sayfadan belirtilen dosyayi indirir ve bulundugu klasöre kaydeder. Github alinan dosyalarin “raw” halini indirmemiz lazim
@@ -243,18 +249,18 @@ wget https://raw.githubusercontent.com/awsdevopsteam/route-53/master/ken.jpg
 
 ### • "curl" komutu ile bir web sayfasini Linux komut sistemi üzerinden sorgulayabilir ve görüntüleyebiliriz. "wget" ile aynidir fark olarak "curl" komutu daha fazla dosya ve internet yolu destekler
 ```bash
-Curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
+curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
 ```
 
 ### • Burada sayfadan verileri alir ve /home/ubuntu/ altinda “deneme” olarak kaydeder 
 !!! –L --> location belirtmek icin    -o --> ciktiyi dosya olarak kaydetmek icin kullanilir.
 ```bash
-Curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
+curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
 ```
 
 ### • Bu komut icine girilen degeri istenilen sayida tekrarlamak icin kullanilir
 ```bash
-Echo edip | xargs –I {} echo {} {} 	# büyük i
+echo edip | xargs –I {} echo {} {} 	# büyük i
 ```
 
 
@@ -304,14 +310,20 @@ $LANG
 
 ## Komut satiri:
 
-•	Printenv  -(yada)-  env
-Bütün veya belirtilen ortam degiskenlerini listeler
+### • Bütün ortam degiskenlerini veya belirtilen ortam degiskenlerini listeler
+```bash
+printenv  -(yada)-  env
+```
 
-•	Set
-Tüm shell ve environment degiskenleri listeler
+### • Tüm shell ve environment degiskenleri listeler
+```bash
+set
+```
 
-•	Printenv USER
-USER degiskenini görüntelemek icin kullanilir
+### • USER degiskenini görüntelemek icin kullanilir
+```bash
+printenv USER
+```
 
 •	Echo $USER
 USER degiskenini görüntülemek icin kullanilir
