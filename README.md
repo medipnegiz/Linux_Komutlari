@@ -166,14 +166,14 @@ find /lesson –iname den\*
 grep ‘naber’ deneme.txt
 ```
 ```bash
-o	Grep –i			 	Büyük/kücük harf duyarsiz sekilde görüntüler
-o	Grep –n				Eslesen dizeleri satir numaralari ile görüntüler
-o	Grep –v				Eslesmeyen satirlari görüntüler
-o	Grep –c				Kac satir eslesdiyse sayisini döndürür
-o	Grep –o “ali”			Dosya icinde sadece eslesen kelimeyi getirir
-o	Grep –w				Sadece kelime olarak arar. Tam kelime olarak bulur
-o	Grep “^li”			“li” ile baslayan satirlari listeler
-o	Grep “dur$”			sonu “dur “ ile biten satirlari listeler
+o	Grep –i			--> 	Büyük/kücük harf duyarsiz sekilde görüntüler
+o	Grep –n			-->	Eslesen dizeleri satir numaralari ile görüntüler
+o	Grep –v			-->	Eslesmeyen satirlari görüntüler
+o	Grep –c			-->	Kac satir eslesdiyse sayisini döndürür
+o	Grep –o “ali”		-->	Dosya icinde sadece eslesen kelimeyi getirir
+o	Grep –w			-->	Sadece kelime olarak arar. Tam kelime olarak bulur
+o	Grep “^li”		-->	“li” ile baslayan satirlari listeler
+o	Grep “dur$”		-->	sonu “dur “ ile biten satirlari listeler
 ```
 
 ### • İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler (-l : listele,   -R : alt dosya ve klasörler dahil)
@@ -449,9 +449,9 @@ su edip
 sudo useradd -m -d /home/edip -c "edip negiz" edip
 ```
 ```bash
-o –m			ana dizinin olusturulmasini saglar
-o –d			ana dizinin adini ayarlamak icin kullanilir
-o –c 			bir aciklama eklemek icin kullanilir
+o –m		-->	ana dizinin olusturulmasini saglar
+o –d		-->	ana dizinin adini ayarlamak icin kullanilir
+o –c 		-->	bir aciklama eklemek icin kullanilir
 ```
 
 ### • Kullaniciya sifre tanimlamak icin kullanilir
@@ -647,8 +647,8 @@ cat edip.txt | tee ahmet.txt
 cat edip.txt | grep guzel
 ```
 ```bash
-o -w 			sadece “guzel” satirini listeler, sonrasinda ifade varsa listelenmez
-o -v  			belirtilen kelime haric hepsini listeler
+o -w 		-->	sadece “guzel” satirini listeler, sonrasinda ifade varsa listelenmez
+o -v  		-->	belirtilen kelime haric hepsini listeler
 ```
 
 ### • Dosya icerisinde “clarusway” arar ve “-A” (after) parametresi ile buldugu satirdan sonraki 3 satiri daha listeler. 
@@ -656,9 +656,9 @@ o -v  			belirtilen kelime haric hepsini listeler
 grep naber -A 3 clarusway edip.txt
 ```
 ```bash
-o -B			(before) komutu ile önceki satirlari listeler
-o -c 			(count) parametresi belirtilen kelime ile baslayan kac tane var sayar
-o -wc 			(wordcount) sadece belirtilen kelimeden kac tane var sayar
+o -B		-->	(before) komutu ile önceki satirlari listeler
+o -c 		-->	(count) parametresi belirtilen kelime ile baslayan kac tane var sayar
+o -wc 		-->	(wordcount) sadece belirtilen kelimeden kac tane var sayar
 ```
 
 ### • listelenen icerigin sadece belirli sütunlarini listelemek icin kullanilir
@@ -666,9 +666,9 @@ o -wc 			(wordcount) sadece belirtilen kelimeden kac tane var sayar
 ls * -l | cut -d' ' -f3
 ```
 ```bash
-o cut 			komutu sütunlara göre filtrelemek icin kullanilir 
-o -f3 			kacinci sütunu alacagini belirler. Burada 3. sütunu alacak
-o d’ ‘  		komutu ne ile ayrilmis oldugunu belirtmek icin kullanilir
+o cut 		-->	komutu sütunlara göre filtrelemek icin kullanilir 
+o -f3 		-->	kacinci sütunu alacagini belirler. Burada 3. sütunu alacak
+o d’ ‘  	-->	komutu ne ile ayrilmis oldugunu belirtmek icin kullanilir
 ```
 
 ### • Kullanicilari listeler ve “:” ile ayrilan kelimelerden sadece birinci sütunu listeler
@@ -711,9 +711,9 @@ cat edip.txt | tr [:space:] '\n'
 wc edip.txt
 ```
 ```bash
-o wc –l		 	sadece satir sayisini verir
-o wc –c		 	sadece karakter sayisini verir
-o wc –w 	 	sadece kelime sayisini verir
+o wc –l		--> 	sadece satir sayisini verir
+o wc –c		--> 	sadece karakter sayisini verir
+o wc –w 	--> 	sadece kelime sayisini verir
 ```
 
 ### • Dosya icerigini harf sirasina göre listeler
@@ -721,10 +721,10 @@ o wc –w 	 	sadece kelime sayisini verir
 sort ali.txt 
 ```
 ```bash
- o -r 			tersten yazdirmak icin kullanilir
- o -u 			ifadeleri uniq olacak sekilde listeler 
- o -f 			büyük/kücük harf duyarsiz sekilde siralar 
- o -n 			sonuclari sayisal siraya göre listeler
+ o -r 		-->	tersten yazdirmak icin kullanilir
+ o -u 		-->	ifadeleri uniq olacak sekilde listeler 
+ o -f 		-->	büyük/kücük harf duyarsiz sekilde siralar 
+ o -n 		-->	sonuclari sayisal siraya göre listeler
  ```
 
 ### • “Uniq” komutu her kelimeden birer tane gelecek sekilde listeler. !!! "sort" komutu ile birlikte kullanilmasi zorunludur
@@ -838,11 +838,11 @@ crontab –e
 ```bash
 * * * * *
 1 2 3 4 5
-o 1  		  	bu kisim dakika icin kullanilir
-o 2  		  	bu kisim saat girmek icin kullanilir
-o 3  		  	bu kisim ayin kacinda onu belirtmek icin kullanilir
-o 4  		  	bu kisim ay girmek icin kullanilir
-o 5  		  	bu kisim ayin gününü belirtmek icin kullanilir
+o 1  		-->  	bu kisim dakika icin kullanilir
+o 2  		-->  	bu kisim saat girmek icin kullanilir
+o 3  		-->  	bu kisim ayin kacinda onu belirtmek icin kullanilir
+o 4  		-->  	bu kisim ay girmek icin kullanilir
+o 5  		-->  	bu kisim ayin gününü belirtmek icin kullanilir
 ```
 
 ### • Bu komut saat 12:25 te git uygulamasini yükler
@@ -862,25 +862,25 @@ crontab –ls
 
 ### • Matematik islemlerinde sembollerin yerine kullanilan komutlar
 ```bash
-o –lt		 	<
-o –gt			>
-o –le			<=
-o –ge			>=
-o -eq			==
-o –ne			!=
-o –z			bos string
-o –n			bos olmayan string
+o –lt		--> 	<
+o –gt		-->	>
+o –le		-->	<=
+o –ge		-->	>=
+o -eq		-->	==
+o –ne		-->	!=
+o –z		-->	bos string
+o –n		-->	bos olmayan string
 ```
 
 ### • Bir Linux dosyasıyla ilişkili çeşitli özellikleri test etmek için kullanılabilecek operatörler
 ```bash
-o –d			directory
-o –e			exist
-o –f	 		Ordinary file 
-o –r			readable 
-o –s	 		size is > 0 bytes
-o –w			writable
-o –x			executable
+o –d		-->	directory
+o –e		-->	exist
+o –f	 	-->	Ordinary file 
+o –r		-->	readable 
+o –s	 	-->	size is > 0 bytes
+o –w		-->	writable
+o –x		-->	executable
 ```
 
 ### • “if .. then” komut satiri kullanimi bu sekildedir. Komutun calismasi icin dosyanin “chmod +x” ile calistirilabilir hale getirilmesi gerekir
@@ -924,9 +924,9 @@ fi
 
 ### • “If..then..else” dosyasinda “degil, or, and” kullanimi asagidaki ifadeler ile olur
 ```bash
-o !	 		degil
-o &&			and
-o ||			or
+o !	 	-->	degil
+o &&		-->	and
+o ||		-->	or
 ```
 ```bash
 #!/bin/bash
