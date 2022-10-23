@@ -607,94 +607,162 @@ sudo yum update git –y
 
 # FILTRE KULLANIM KOMUTLARI
 
-•	Cat –n ali.txt
-Listeleme yaparken “-n” ile satir sayilari ile beraber gösterir
+### • Listeleme yaparken “-n” ile satir sayilari ile beraber gösterir
+```bash
+cat –n ali.txt
+```
 
-•	Tac edip.txt
-Dosya icerigini tersten baslayarak listeler
+### • Dosya icerigini tersten baslayarak listeler
+```bash
+tac edip.txt
+```
 
-•	Cat edip.txt | tee ahmet.txt
-“Tee” komutu ile dosya icerisine yazi ekler ve ekranda gösterir
+### • “Tee” komutu ile dosya icerisine yazi ekler ve ekranda gösterir ???
+```bash
+cat edip.txt | tee ahmet.txt
+```
 
-•	Cat edip.txt | grep guzel
-“cat” ile dosya icerigini listeler ve grep onlari filtreleyerek sadece “guzel” olan yeri listeler. “-w” ile sadece “guzel” satirini listeler, sonrasinda ifade varsa listelenmez. “-v” parametresi ile belirtilen kelime haric hepsini listeler.
+### • “cat” ile dosya icerigini listeler ve grep onlari filtreleyerek sadece “guzel” olan yeri listeler
+```bash
+cat edip.txt | grep guzel
+```
+```bash
+o -w 			sadece “guzel” satirini listeler, sonrasinda ifade varsa listelenmez
+o -v  			belirtilen kelime haric hepsini listeler
+```
 
+### • Dosya icerisinde “clarusway” arar ve “-A” (after) parametresi ile buldugu satirdan sonraki 3 satiri daha listeler. 
+```bash
+grep naber -A 3 clarusway edip.txt
+```
+```bash
+o -B			(before) komutu ile önceki satirlari listeler
+o -c 			(count) parametresi belirtilen kelime ile baslayan kac tane var sayar
+o -wc 			(wordcount) sadece belirtilen kelimeden kac tane var sayar
+```
 
-•	grep naber -A 3 clarusway edip.txt
-Dosya icerisinde “clarusway” arar ve “-A” (after) parametresi ile buldugu satirdan sonraki 3 satiri daha listeler. “-B”  (before) komutu ile önceki satirlari listeler. “-c” parametresi belirtilen kelime ile baslayan kac tane var sayar. “-wc” sadece belirtilen kelimeden kac tane var sayar.
+### • listelenen icerigin sadece belirli sütunlarini listelemek icin kullanilir
+```bash
+ls * -l | cut -d' ' -f3
+```
+```bash
+o cut 			komutu sütunlara göre filtrelemek icin kullanilir 
+o -f3 			kacinci sütunu alacagini belirler. Burada 3. sütunu alacak
+o d’ ‘  		komutu ne ile ayrilmis oldugunu belirtmek icin kullanilir
+```
 
-•	ls * -l | cut -d' ' -f3
-listelenen icerigin sadece belirli sütunlarini listelemek icin kullanilir. “cut” komutu sütunlara göre filtrelemek icin kullanilir. “-f3” kacinci sütunu alacagini belirler. “ d’ ‘ “ komutu ne ile ayrilmis oldugunu belirtmek icin kullanilir
+### • Kullanicilari listeler ve “:” ile ayrilan kelimelerden sadece birinci sütunu listeler
+```bash
+cat /etc/passwd | cut -d: -f1
+```
 
-•	cat /etc/passwd | cut -d: -f1
-Kullanicilari listeler ve “:” ile ayrilan kelimelerden sadece birinci sütunu listeler.
+### • Consoldan metin girerek yazmak icin kullanilir. “<<” isaretinden sonraki kelime girilirse yazma islemini bitir anlamindadir. “SON” gördügü yerde yazma islemi sonra erer
+```bash
+cat << SON > clarusway.txt 
+```
 
-•	Cat << SON > clarusway.txt 
-“<<” isaretinden sonra kelime girilirse yazma islemini bitir anlamindadir. “SON” gördügü yerde yazma islemi sonra erer.
+### • “tr” komutu ile icerisinde aktarilan metindeki harfleri degistirmek icin kullanilir. Burada “a” --> “O” ve “e” --> “R” harfine dönüsür. Sadece listelerken dönüsüm olur ana dosya degismez
+```bash
+cat clarusway.txt | tr ae OR 
+```
 
-•	Cat clarusway.txt | tr ae OR
-“tr” komutu ile icerisinde aktarilan metindeki harfleri degistirmek icin kullanilir. Burada “a”  “O” ve 
-“e”  “R” harfine dönüsür. Sadece listelerken dönüsüm olur ana dosya degismez.
+### • Normalde asagiya yeni satirda listelenecek olan metinleri tek bir satirda arada bir bosluk ile listeler
+```bash
+cat count.txt | tr '\n' ' '
+```
 
-•	cat count.txt | tr '\n' ' '
-Normalde asagiya yeni satirda listelenecek olan metinleri tek bir satirda arada bir bosluk ile listeler
+### • “tr” komutu ile birlikte kullanilan “-d” sil anlamindadir. Edip dosyasi icindeki belirli harfleri silmek icin kullanilir. Sadece cikti olarak gösterir, ana dosya etkilenmez
+```bash
+cat edip.txt | tr –d aeiou
+```
 
-•	cat edip.txt | tr –d aeiou
-“tr” komutu ile birlikte kullanilan “-d” sil anlamindadir. Edip dosyasi icindeki belirli harfleri silmek icin kullanilir. Ana dosya etkilenmez.
+### • Dosya icerisindeki bütün harfleri büyük olacak sekilde yazdirir. Dosya etkilenmez, sadece ciktida degisir
+```bash
+cat clarusway.txt | tr [a-z] [A-Z]
+```
 
-•	cat clarusway.txt | tr [a-z] [A-Z]
-Dosya icerisindeki bütün harfleri büyük olacak sekilde yazdirir.
+### • Tüm bosluklardan sonra “enter” eklemek icin kullanilir
+```bash
+cat edip.txt | tr [:space:] '\n'
+```
 
-•	cat edip.txt | tr [:space:] '\n'
-tüm bosluklardan sonra “enter” eklemek icin kullanilir
+### • Edip dosyasi icindeki satir, kelime ve karakter olarak sayisini gösterir
+```bash
+wc edip.txt
+```
+```bash
+o wc –l		 	sadece satir sayisini verir
+o wc –c		 	sadece karakter sayisini verir
+o wc –w 	 	sadece kelime sayisini verir
+```
 
-•	Wc edip.txt
-Edip dosyasi icindeki satir, kelime ve karakter olarak sayisini gösterir.
-o	Wc –l	 sadece satir sayisini verir
-o	Wc –c	 sadece karakter sayisini verir
-o	Wc –w   sadece kelime sayisini verir
+### • Dosya icerigini harf sirasina göre listeler
+```bash
+sort ali.txt 
+```
+```bash
+ o -r 			tersten yazdirmak icin kullanilir
+ o -u 			ifadeleri uniq olacak sekilde listeler 
+ o -f 			büyük/kücük harf duyarsiz sekilde siralar 
+ o -n 			sonuclari sayisal siraya göre listeler
+ ```
 
-•	Sort ali.txt 
-Dosya icerigini harf sirasina göre listeler. “-r” ile tersten yazdirabiliriz. “-u” ile ifadeleri uniq olacak sekilde listeler. “-f” büyük/kücük harf duyarsiz sekilde siralar. “-n” sonuclari sayisal siraya göre listeler.
+### • “Uniq” komutu her kelimeden birer tane gelecek sekilde listeler. !!! "sort" komutu ile birlikte kullanilmasi zorunludur
+```bash
+sort ahmet.txt | uniq
+```
 
-•	Sort ahmet.txt | uniq
-“Uniq” komutu her kelimeden birer tane gelecek sekilde listeler. ## sort komutu ile birlikte kullanilmasi zorunludur.
+### • İki dosyanin kesisimini almak icin kullanilir. İlk sütun sadece dosya 1 de olanlar. İkinci sütun sadece dosya 2 de olanlar. Ücüncü sütun iki dosyada da olanlari listeler. !!! sort komutu ile birlikte kullanilmasi zorunludur
+```bash
+comm file1.txt file2.txt 
+```
 
-•	Comm file1.txt file2.txt 
-İki dosyanin kesisimini almak icin kullanilir. İlk sütun sadece dosya 1 de olanlar. İkinci sütun sadece dosya 2 de olanlar. Ücüncü sütun iki dosyada da olanlari listeler. ## sort komutu ile birlikte kullanilmasi zorunludur.
+### • Tek satirda birden fazla komut verilebilir. “&&” ilk komut basarili ise diger komutu calistirir
+```bash
+cd /home && ls && cat
+```
 
-•	Cd /home && ls && cat
-Tek satirda birden fazla komut verilebilir. “&&” ilk komut basarili ise diger komutu calistirir. Ard arda bir sürü komut verilebilir.
+### • Tek satirda birden fazla komut verilebilir. “;” ilk komut basarili olmasa bile diger komutu calistirir
+```bash
+cd /home ; ls ; cat
+```
 
-•	Cd /home ; ls ; cat
-Tek satirda birden fazla komut verilebilir. “;” ilk komut basarili olmasa bile diger komutu calistirir. Ard arda bir sürü komut verilebilir
+### • Tek satirda birden fazla komut verilebilir. “||” ilk komut basarili degilse diger komutu calistirir veya ilk komut basarili olursa sonraki komutu yapmaz. (veya) anlamindadir
+```bash
+cd /home || ls || cat
+```
 
-•	Cd /home || ls || cat
-Tek satirda birden fazla komut verilebilir. “||” ilk komut basarili degilse diger komutu calistirir veya ilk komut basarili olursa sonraki komutu yapmaz. Ard arda bir sürü komut verilebilir
+### • Bir önceki girilen komut hatali ise hata kodunu yazdirir. Hata yok ise “0” döndürür
+```bash
+echo $?
+```
 
-•	Echo $?
-Bir önceki girilen komut hatali ise hata kodunu yazdirir. Hata yok ise “0” döndürür.
+### • Islem yaparken “ && ve ||” birlestirerek kullanilabilir. Dogru olursa “&&” devreye girecek, yanlis olursa “||” devreye girecek
+```bash
+rm edip.txt && echo 'silindi' || 'hata'
+```
 
-•	rm edip.txt && echo 'silindi' || 'hata'
-Islem yaparken “ && ve ||” birlestirerek kullanilabilir. Dogru olursa “&&” devreye girecek, yanlis olursa “||” devreye girecek.
+### • “#” isareti ile komut sonuna yorum satiri eklenebilir
+```bash
+echo edip # burasi yorum satiridir
+```
 
-•	Echo edip # burasi yorum satiridir
-“#” isareti ile komut sonuna yorum satiri eklenebilir
+### • “\” bu isaret kendinden sonra gelen özel karakterin özel gücünü elinden alir ve islevsiz yapar
+```bash
+echo ahmet can \# artik yorum olamaz
+```
 
-•	Echo ahmet can \# artik yorum olamaz
-“\” bu isaret kendinden sonra gelen özel karakterin özel gücünü elinden alir ve islevsiz yapar.
+### • “-e” parametresi satir icerisindeki (\n) komutunu veya varsa diger komutlari aktif hale getirir
+```bash
+echo –e “ahmet \n murat”
+```
 
-•	Echo –e “ahmet \n murat”
-“-e” parametresi (\n) komutunu aktif hale getirir
+### • “1 --> standart output” cikti degerini cikti.txt icine kaydet.  “2 --> standart error” ciktida hata varsa hatayi error.txt icine kaydet
+```bash
+./myscript 1> cikti.txt 2> error.txt
+```
 
-•	./myscript 1> cikti.txt 2> error.txt
-“1 --> standart output” cikti degerini cikti.txt icine kaydet
-“2 --> standart error” ciktida hata varsa hatayi error.txt icine kaydet
-
-
-
-
-SED, AWK VE CRONTAB KOMUTLARI
+# SED, AWK VE CRONTAB KOMUTLARI
 
 •	Sed –i ‘s/linux/ubuntu/’ ali.txt
 Bu komut ali dosyasi icindeki ilk “linux” ifadesini bulur ve onu “ubuntu” olarak degistirir. Büyük-kücük harf duyarli degil. (-i) degisikligi dosyaya uygular ve kaydeder.
