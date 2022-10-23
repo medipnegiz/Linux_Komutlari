@@ -223,6 +223,11 @@ Bu komut dosyasinin nerede oldugunu gösterir
 •	Curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
 Bu komut ile bir web sayfasini Linux komut sistemi üzerinden sorgulayabilir ve görüntüleyebiliriz
 
+•	Curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
+–L --> location belirtmek icin    -o --> ciktiyi dosya olarak kaydetmek icin kullanilir.
+Burada sayfadan verileri alir ve /home/ubuntu/ altinda “deneme” olarak kaydeder
+
+
 •	Echo edip | xargs –I {} echo {} {} 	# büyük i
 Bu komut icine girilen degeri istenilen sayida tekrarlamak icin kullanilir
 
