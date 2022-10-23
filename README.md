@@ -201,45 +201,66 @@ grep lin[0-9] clarusway.txt
 cd --help | grep –C3 ‘director’
 ```
 
-•	Ls –R | grep .txt
-Sonu ‘.txt’ ile biten dosyalari listelemek icin kullanilir
+### • Sonu ‘.txt’ ile biten dosyalari listelemek icin kullanilir
+```bash
+Ls –R | grep .txt
+```
 
-•	Sudo apt-get install mlocate
-Locate komutunu yükler. Bu komut ile tüm bilgisayarda konum belirtmeden arama yapilir
+### • Locate komutunu yükler. Bu komut ile tüm bilgisayarda konum belirtmeden arama yapilir
+```bash
+Sudo apt-get install mlocate
+```
 
-•	Locate deneme.txt
-Tüm bilgisayarda “deneme.txt” ara ve konumunu yazdirir
+### • Tüm bilgisayarda “deneme.txt” ara ve konumunu yazdirir
+```bash
+Locate deneme.txt
+```
 
-•	Sudo updatedb
-Locate komutu günceller, böylece yeni eklenen veya silinen dosyalarin komunu yazdirilabilir
+### • Locate komutu günceller, böylece yeni eklenen veya silinen dosyalarin komunu yazdirilabilir
+```bash
+Sudo updatedb
+```
 
-•	History | grep ‘find’
-Daha önce kullanilan “find” komutlarini listeler
+### • Daha önce kullanilan “find” komutlarini listeler
+```bash
+History | grep ‘find’
+```
 
-•	Which pwd
-Bu komutun hangi dizinde kayitli oldugunu gösterir
+### • Bu komutun hangi dizinde kayitli oldugunu gösterir
+```bash
+Which pwd
+```
 
-•	Whereis pwd
-Bu komut dosyasinin nerede oldugunu gösterir
+### • Bu komut dosyasinin nerede oldugunu gösterir
+```bash
+Whereis pwd
+```
 
-•	wget https://raw.githubusercontent.com/awsdevopsteam/route-53/master/ken.jpg
-“wget” komutu ilgili sayfadan belirtilen dosyayi indirir ve bulundugu klasöre kaydeder. Github alinan dosyalarin “raw” halini indirmemiz lazim.
+### • “wget” komutu ilgili sayfadan belirtilen dosyayi indirir ve bulundugu klasöre kaydeder. Github alinan dosyalarin “raw” halini indirmemiz lazim
+```bash
+wget https://raw.githubusercontent.com/awsdevopsteam/route-53/master/ken.jpg
+```
 
-•	Curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
-Bu komut ile bir web sayfasini Linux komut sistemi üzerinden sorgulayabilir ve görüntüleyebiliriz
+### • "curl" komutu ile bir web sayfasini Linux komut sistemi üzerinden sorgulayabilir ve görüntüleyebiliriz. "wget" ile aynidir fark olarak "curl" komutu daha fazl dosya ve internet yolu destekler
+```bash
+Curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
+```
 
-•	Curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
-–L --> location belirtmek icin    -o --> ciktiyi dosya olarak kaydetmek icin kullanilir.
-Burada sayfadan verileri alir ve /home/ubuntu/ altinda “deneme” olarak kaydeder
+### • Burada sayfadan verileri alir ve /home/ubuntu/ altinda “deneme” olarak kaydeder 
+!!! –L --> location belirtmek icin    -o --> ciktiyi dosya olarak kaydetmek icin kullanilir.
+```bash
+Curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
+```
+
+### • Bu komut icine girilen degeri istenilen sayida tekrarlamak icin kullanilir
+```bash
+Echo edip | xargs –I {} echo {} {} 	# büyük i
+```
 
 
-•	Echo edip | xargs –I {} echo {} {} 	# büyük i
-Bu komut icine girilen degeri istenilen sayida tekrarlamak icin kullanilir
+# ORTAM DEGISKENLERI
 
-
-ORTAM DEGISKENLERI
-
-!!! Asagidaki degiskenler büyük harfle ve basinda $ isareti ile girilmelidir.
+## !!! Asagidaki degiskenler büyük harfle ve basinda $ isareti ile girilmelidir.
 •	PATH
 Bu değişken, sisteminizin yürütülebilir dosyaları aradığı, iki nokta üst üste (:) ile ayrılmış bir dizin listesi içerir.
 
