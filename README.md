@@ -241,7 +241,7 @@ Whereis pwd
 wget https://raw.githubusercontent.com/awsdevopsteam/route-53/master/ken.jpg
 ```
 
-### • "curl" komutu ile bir web sayfasini Linux komut sistemi üzerinden sorgulayabilir ve görüntüleyebiliriz. "wget" ile aynidir fark olarak "curl" komutu daha fazl dosya ve internet yolu destekler
+### • "curl" komutu ile bir web sayfasini Linux komut sistemi üzerinden sorgulayabilir ve görüntüleyebiliriz. "wget" ile aynidir fark olarak "curl" komutu daha fazla dosya ve internet yolu destekler
 ```bash
 Curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
 ```
@@ -260,32 +260,50 @@ Echo edip | xargs –I {} echo {} {} 	# büyük i
 
 # ORTAM DEGISKENLERI
 
-## !!! Asagidaki degiskenler büyük harfle ve basinda $ isareti ile girilmelidir.
-•	PATH
-Bu değişken, sisteminizin yürütülebilir dosyaları aradığı, iki nokta üst üste (:) ile ayrılmış bir dizin listesi içerir.
+## !!! Asagidaki degiskenler büyük harfle ve basinda $ isareti ile girilmelidir
 
-•	USER
-Kullanici adi
+### • Bu değişken, sisteminizin yürütülebilir dosyaları aradığı, iki nokta üst üste (:) ile ayrılmış bir dizin listesi içerir
+```bash
+$PATH
+```
 
-•	HOME
-Kullanicinin ana dizininin varsayilan yolu
+### • Kullanici adi
+```bash
+$USER
+```
 
-•	EDITOR
-Varsayilan text editörünün yolu
+### • Kullanicinin ana dizininin varsayilan yolu
+```bash
+$HOME
+```
 
-•	UID
-Kullanici bensersiz ID
+### • Varsayilan text editörünün yolu
+```bash
+$EDITOR
+```
 
-•	TERM
-Varsayilan terminal ayari
+### • Kullanici bensersiz ID
+```bash
+$UID
+```
 
-•	SHELL
-Kullanici tarafindan kullanilan kabuk
+### • Varsayilan terminal ayari
+```bash
+$TERM
+```
 
-•	LANG
-Gecerli yerel ayarlar
+### • Kullanici tarafindan kullanilan kabuk
+```bash
+$SHELL
+```
 
-Komut satiri:
+### • Gecerli yerel ayarlar
+```bash
+$LANG
+```
+
+## Komut satiri:
+
 •	Printenv  -(yada)-  env
 Bütün veya belirtilen ortam degiskenlerini listeler
 
