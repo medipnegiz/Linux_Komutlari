@@ -41,6 +41,11 @@ Apropos ls
 Ls --help
 ```
 
+### • Burada “-p” parametresi ile eger “deneme” klasörü yoksa hata vermez, olusturur ve onun da icine “edip” klasörü olusturur
+```bash
+Mkdir –p /home/deneme/edip
+```
+
 ### • Dosyanin ilk 10 satirini görüntülemek icin kullanilir
 ```bash
 Head test.txt
