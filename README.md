@@ -96,67 +96,105 @@ Tac deneme.txt
 More deneme.txt
 ```
 
-•	Ls --help | more
-Tüm yazilari indirir ama satir satir inerek gösterir
+### • Tüm yazilari indirir ama satir satir inerek gösterir
+```bash
+Ls --help | more
+```
 
-•	Less deneme.txt
-Bir dosyanin icerigini görüntülememize ve dosya icerisinde gezinmemizi saglar.
+### • Bir dosyanin icerigini görüntülememize ve dosya icerisinde gezinmemizi saglar
+```bash
+Less deneme.txt
+```
 
-•	Ls --help | less
-Terminal kadar yazi gösterir ve satir satir inilir. “q” ile cikilir 
+### • Terminal kadar yazi gösterir ve satir satir inilir. “q” ile cikilir
+```bash
+Ls --help | less
+```
 
-•	Find .
-Bulundugumuz dizinde bulunan tüm dosyalari alt klasörler ile birlikte listeler
+### • Bulundugumuz dizinde bulunan tüm dosyalari alt klasörler ile birlikte listeler
+```bash
+Find .
+```
 
-•	Find /home –name test.txt
-Home klasörü icerisindeki test.txt dosyasinin tam uzantisini görüntüler
+### • Home klasörü icerisindeki test.txt dosyasinin tam uzantisini görüntüler
+```bash
+Find /home –name test.txt
+```
 
-•	Find /lesson –name den\*
-Lesson klasörü icindeki “den” ile baslayan bütün dosyalari listeler. (Büyük-kücük harf duyarli)
+### • Lesson klasörü icindeki “den” ile baslayan bütün dosyalari listeler (Büyük-kücük harf duyarli)
+```bash
+Find /lesson –name den\*
+```
 
-•	Find /lesson –name *.png
-Lesson klasörü icindeki “.png” ile biten bütün dosyalari listeler.
+### • Lesson klasörü icindeki “.png” ile biten bütün dosyalari listeler
+```bash
+Find /lesson –name *.png
+```
 
-•	Find /lesson –iname den\*
-Lesson klasörü icindeki “den” ile baslayan (büyük-kücük harf fark etmez) bütün dosyalari listeler. 
+### • Lesson klasörü icindeki “den” ile baslayan (büyük-kücük harf fark etmez) bütün dosyalari listeler
+```bash
+Find /lesson –iname den\*
+```
 
-•	Grep ‘naber’ deneme.txt
-Dosya icerisinde “naber” kelimesi olan tüm satiri görüntüler
-o	Grep –i 			Büyük/kücük harf duyarsiz sekilde görüntüler
-o	Grep –n			Eslesen dizeleri satir numaralari ile görüntüler
-o	Grep –v			Eslesmeyen satirlari görüntüler
-o	Grep –c			Kac satir eslesdiyse sayisini döndürür
+### • Dosya icerisinde “naber” kelimesi olan tüm satiri görüntüler
+```bash
+Grep ‘naber’ deneme.txt
+```
+```bash
+o	Grep –i			 	Büyük/kücük harf duyarsiz sekilde görüntüler
+o	Grep –n				Eslesen dizeleri satir numaralari ile görüntüler
+o	Grep –v				Eslesmeyen satirlari görüntüler
+o	Grep –c				Kac satir eslesdiyse sayisini döndürür
 o	Grep –o “ali”			Dosya icinde sadece eslesen kelimeyi getirir
-o	Grep –w			Sadece kelime olarak arar. Tam kelime olarak bulur
+o	Grep –w				Sadece kelime olarak arar. Tam kelime olarak bulur
 o	Grep “^li”			“li” ile baslayan satirlari listeler
 o	Grep “dur$”			sonu “dur “ ile biten satirlari listeler
+```
 
-•	Grep –iRl ‘naber’ (-l : listele,   -R : alt dosya ve klasörler dahil)
-İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler
+### • İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler (-l : listele,   -R : alt dosya ve klasörler dahil)
+```bash
+Grep –iRl ‘naber’ 
+```
 
-•	Grep ‘is’ *
-İcinde ‘is’ olan bütün satirlari listeler. Dosya farketmeksizin
+### • İcinde ‘is’ olan bütün satirlari listeler. Dosya farketmeksizin
+```bash
+Grep ‘is’ * 
+```
 
-•	grep -A3 'ali' clarusway.txt
-Dosya icinde ‘ali’ ile eslesen satiri ve öncesindeki 3 satir daha listeler
+### • Dosya icinde ‘ali’ ile eslesen satiri ve öncesindeki 3 satir daha listeler
+```bash
+grep -A3 'ali' clarusway.txt
+```
 
+### • Dosya icinde ‘veli’ ile eslesen satiri ve sonrasinda 3 satir daha listeler
+```bash
+grep -B3 'veli' clarusway.txt
+```
 
-•	grep -B3 'veli' clarusway.txt
-Dosya icinde ‘veli’ ile eslesen satiri ve sonrasinda 3 satir daha listeler
+### • Dosya icinde ‘can’ ile eslesen satiri, öncesinde ve sonrasinda 3 satir daha listeler
+```bash
+grep -C3 'can' clarusway.txt
+```
 
-•	grep -C3 'can' clarusway.txt
-Dosya icinde ‘can’ ile eslesen satiri, öncesinde ve sonrasinda 3 satir daha listeler
-•	grep lin[u] clarusway.txt
-dosya icerisinde “lin” isminden sonra sadece “u” olanlari listeler
+### • dosya icerisinde “lin” isminden sonra sadece “u” olanlari listeler
+```bash
+grep lin[u] clarusway.txt
+```
 
-•	grep lin[a-z] clarusway.txt
-Dosya icerisinde “lin” isminden sonra sadece harf olanlari listeler
+### • Dosya icerisinde “lin” isminden sonra sadece harf olanlari listeler
+```bash
+grep lin[a-z] clarusway.txt
+```
 
-•	grep lin[0-9] clarusway.txt
-Dosya icerisinde “lin” isminden sonra sadece rakam olanlari listeler
+### • Dosya icerisinde “lin” isminden sonra sadece rakam olanlari listeler
+```bash
+grep lin[0-9] clarusway.txt
+```
 
-•	cd --help | grep –C3 ‘director’
-“cd” komutunun help dosyasi icinde “director” gecen satirin önce-sonra 3 satir listeler
+### • “cd” komutunun help dosyasi icinde “director” gecen satirin önce-sonra 3 satir listeler
+```bash
+cd --help | grep –C3 ‘director’
+```
 
 •	Ls –R | grep .txt
 Sonu ‘.txt’ ile biten dosyalari listelemek icin kullanilir
