@@ -325,60 +325,83 @@ set
 printenv USER
 ```
 
-•	Echo $USER
-USER degiskenini görüntülemek icin kullanilir
+### • USER degiskenini görüntülemek icin kullanilir
+```bash
+echo $USER
+```
 
-•	EDIPP=mahmutedipnegiz
-Büyük harfler ile yeni bir degisken tanimlanabilir. Arada bosluk olmaz!!!
+### • Büyük harfler ile yeni bir degisken tanimlanabilir. Arada bosluk olmaz!!!
+```bash
+EDIPP=mahmutedipnegiz
+```
+
+### • “cd” komutunu calistirinca bundan sonra gidecegi ana dizini tanimladik
+```bash
+HOME=/home/ec2-user/edip
+```
+
+### • Daha önceden tanimli bir degiskeni silmek icin kullanilir
+```bash
+unset EDIPP
+```
+
+### • Kabuk degiskenlerini diger kabuklara aktarmak icin kullanilir
+```bash
+export
+```
+
+### • Degiskeni cevresel degisken olarak tanimlar. Cercevesini genisletir
+```bash
+export EDIP=mahmutedipnegiz
+```
+
+### • Komutlarin yolunu gösterir. Girilen program ve komutlar önce bu klasörlere bakar ve varsa calistirir
+```bash
+echo $PATH
+```
+
+### • Program calistirmak icin Yola yeni bir klasör eklenir. Artik komut calistirmak icin bu klasöre de bakar. Arada (:) olmak zorunda
+```bash
+PATH=$PATH:/games/Pubg
+```
+
+### • Ana dizine ekleme yapar. Eski dizin sabit kalir yeni dizini sona ekler. Üzerine yazmak icin degisken tekrar tanimlanmalidir
+```bash
+HOME=$HOME/home/desktop
+```
+
+### • Yazmis oldugumuz kod dosyasini bulundugumuz SHELL ortaminda calistirir. Execute olarak izin verilmeli
+```bash
+source my_script.sh  -(yada)-  . my_script.sh
+```
+
+### • Yazmis oldugumuz kod dosyasini farkli bir SHELL de calistirir, bizim bulundugumuz SHELL ortamina etki etmez. Execute olarak izin verilmeli ???
+```bash
+./my_script.sh
+```
+
+### • Bu komut ile ALIAS tanimlamasi yapariz ve SHELL her baglanmada otomatik olarak icindekileri tanimlar ve calistirir
+```bash
+vim .bashrc
+```
+
+### • Bu degiskeni yazdirince $HOME kismini komut olarak algilar ve yazdirir. (“) icine yazilan ifadelerde komut varsa ona komut olarak islem yapar
+```bash
+MYVAR="my name is $HOME"
+```
+
+### • Bu degiskeni yazdirince $PATH kismini metin olarak algilar ve yazdirir. (‘) icine yazilan herseyi metin olarak algilar ve yazdirir
+```bash
+MYVAR=’my name is $PATH’
+```
+
+### • Bu degiskeni yazdirince $PATH kismini metin olarak algilar ve yazdirir. (\) kendinden sonraki komutun özel gücünü alir ve metin olarak algilatir
+```bash
+MYVAR=’”my name is \$PATH”
+```
 
 
-•	HOME=/home/ec2-user/edip
-“cd” komutunu calistirinca bundan sonra gidecegi ana dizini tanimladik.
-
-•	Unset EDIPP
-Daha önceden tanimli bir degiskeni silmek icin kullanilir
-
-•	Export 
-Kabuk degiskenlerini diger kabuklara aktarmak icin kullanilir
-
-•	Export EDIP=mahmutedipnegiz
-Degiskeni cevresel degisken olarak tanimlar. Cercevesini genisletir
-
-•	Echo $PATH
-Komutlarin yolunu gösterir. Girilen program ve komutlar önce bu klasörlere bakilir ve varsa calistirir.
-
-•	PATH=$PATH:/games/Pubg
-Program calistirmak icin Yola yeni bir klasör eklenir. Artik komut calistirmak icin bu klasöre de bakar. Arada (:) olmak zorunda.
-
-•	HOME=$HOME/home/Desktop
-Ana dizine ekleme yapar. Eski dizin sabit kalir yeni dizini sona ekler. Üzerine yazmak icin degisken tekrar tanimlanmalidir.
-
-•	Source my_script.sh  -(yada)-  . my_script.sh
-Yazmis oldugumuz kod dosyasini bulundugumuz SHELL ortaminda calistirir. Execute olarak izin verilmeli.
-
-•	./my_script.sh
-Yazmis oldugumuz kod dosyasini farkli bir SHELL de calistirir, bizim bulundugumuz SHELL ortamina etki etmez. Execute olarak izin verilmeli.
-
-•	vim .bashrc
-bu komut ile ALIAS tanimlamasi yapariz ve SHELL her baglanmada otomatik olarak icindekileri tanimlar ve calistirir.
-
-•	MYVAR="my name is $HOME"
-Bu degiskeni yazdirince $HOME kismini komut olarak algilar ve yazdirir. (“) icine yazilan ifadelerde komut varsa ona komut olarak islem yapar.
-
-•	MYVAR=’my name is $PATH’
-Bu degiskeni yazdirince $HOME kismini metin olarak algilar ve yazdirir. (‘) icine yazilan herseyi metin olarak algilar ve yazdirir.
-
-•	MYVAR=’”my name is \$PATH”
-Bu degiskeni yazdirince $HOME kismini metin olarak algilar ve yazdirir. (\) kendinden sonrakini komut olarak algilamasini engeller
-
-
-
-
-
-
-
-
-KULLANICI KOMUTLARI
+# KULLANICI KOMUTLARI
 
 •	Who
 Sisteme kac kullanici bagli oldugunu listeler
