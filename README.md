@@ -403,78 +403,117 @@ MYVAR=’”my name is \$PATH”
 
 # KULLANICI KOMUTLARI
 
-•	Who
-Sisteme kac kullanici bagli oldugunu listeler
+### • Sisteme kac kullanici bagli oldugunu listeler
+```bash
+who
+```
 
-•	W
-Sisteme kac kullanici bagli ve ne yapiyor onu listeler
+### • Sisteme kac kullanici bagli ve ne yapiyor onu listeler
+```bash
+w
+```
 
-•	Sudo nano /etc/login.defs
-Kullanici olusturma ile alakali configuration dosyasi acilir ve degisiklikler yapilabilir
+### • Kullanici olusturma ile alakali configuration dosyasi acilir ve degisiklikler yapilabilir
+```bash
+sudo nano /etc/login.defs
+```
 
-•	Sudo Adduser edip
-Yeni bir kullanici eklemek icin kullanilir
+### • Yeni bir kullanici eklemek icin kullanilir
+```bash
+sudo Adduser edip
+```
 
-•	Su edip
-Kullanici degistirmek icin kullanilir
+### • Kullanici degistirmek icin kullanilir
+```bash
+su edip
+```
 
-•	Sudo useradd -m -d /home/edip -c "edip negiz" edip
-Kullanici eklemenin bir diger yöntemi
-o	–m		ana dizinin olusturulmasini saglar
-o	–d		ana dizinin adini ayarlamak icin kullanilir
-o	–c 		bir aciklama eklemek icin kullanilir
+### • Kullanici eklemenin bir diger yöntemi
+```bash
+sudo useradd -m -d /home/edip -c "edip negiz" edip
+```
+```bash
+o –m			ana dizinin olusturulmasini saglar
+o –d			ana dizinin adini ayarlamak icin kullanilir
+o –c 			bir aciklama eklemek icin kullanilir
+```
 
+### • Kullaniciya sifre tanimlamak icin kullanilir
+```bash
+sudo passwd edip
+```
 
-•	sudo passwd edip
-Kullaniciya sifre tanimlamak icin kullanilir
+### • Kullanicin sifresi süresi doldurulur ve ilk giriste sifre degistirmesi istenir
+```bash
+sudo passwd –expire edip
+```
 
-•	sudo passwd –expire edip
-Kullanicin sifresi süresi doldurulur ve ilk giriste sifre degistirmesi istenir.
+### • Kayitli bir kullaniciyi silmek icin kullanilir. (-r) kullanicinin ana dizinini de siler. Normal silmede ana dizin durur sadece kullanici silinir
+```bash
+sudo userdel –r edip 
+```
 
-•	sudo userdel –r edip 
-Kayitli bir kullaniciyi silmek icin kullanilir. (-r) kullanicinin ana dizinini de siler. Normal silmede ana dizin durur sadece kullanici silinir
+### • Kullanicin id bilgisini görüntülemek icin kullanilir
+```bash
+id edip
+```
 
-•	id edip
-Kullanicin id bilgisini görüntülemek icin kullanilir
+### • Kayitli tüm kullanici bilgilerini listeler
+```bash
+cat /etc/passwd
+```
 
-•	cat /etc/passwd
-Kayitli tüm kullanici bilgilerini listeler
+### • Kullanicinin özelliklerini degistirmek icin kullanilir (user modify).  "-c --> comment" kullaniciya yorum eklemek icin kullanilir
+```bash
+sudo usermod –c “aws solution archtitect” edip
+```
 
-•	sudo usermod –c “aws solution archtitect” edip
-Kullanicinin özelliklerini degistirmek icin kullanilir
+### • “Edip” kullanici adini “Murat” olarak degistirir
+```bash
+sudo usermod –l murat edip
+```
 
-•	Sudo usermod –l murat edip
-“Edip” kullanici adini “Murat” olarak degistirir
+### • Kullanıcı parolaları şifrelenir ve “/etc/shadow” dosyasında saklanır. Bu dosya sadece okunur ve sadece root tarafından erişilebilir
+```bash
+sudo cat /etc/shadow
+```
 
-•	sudo cat /etc/shadow
-Kullanıcı parolaları şifrelenir ve “/etc/shadow” dosyasında saklanır. Bu dosya sadece okunur ve sadece root tarafından erişilebilir.
+### • Yeni bir grup olusturmak icin kullanilir
+```bash
+sudo groupadd linux
+```
 
+### • Kullanicilari gruplara eklemek icin kullanilir. (-a) append, kullanicinin eski gruplarindan cikmadan yeni gruba eklemesini saglar "-G" parametresi ile beraber kullanilir
+```bash
+sudo usermod –a –G linux edip
+```
 
-•	Sudo groupadd linux
-Yeni bir grup olusturmak icin kullanilir
+### • Kullanicilar birkac gruba ait olabilir. Bu komut ile gruplar ve kullanicilari listelenir
+```bash
+sudo cat /etc/group
+```
 
-•	Sudo usermod –a –G linux edip
-Kullanicilari gruplara eklemek icin kullanilir. (-a) append, kullanicinin eski gruplarindan cikmadan yeni gruba eklemesini saglar
+### • Kullanicinin hangi grupta oldugunu listeler
+```bash
+sudo groups
+```
 
-•	Sudo cat /etc/group
-Kullanicilar birkac gruba ait olabilir. Bu komut ile gruplar ve kullanicilari listelenir
+### • Daha önceden var olan “linux” grubunun adini “aws” olarak degistirir
+```bash
+sudo groupmod –n aws linux
+```
 
-•	Sudo groups
-Kullanicinin hangi grupta oldugunu listeler
+### • “Aws” grubuna edip kullanicisini ekler
+```bash
+sudo gpasswd –a edip aws
+```
 
-•	Sudo groupmod –n aws linux
-Daha önceden var olan “linux” grubunun adini “aws” olarak degistirir
+### • “Aws” grubundan “edip” kullanicisini siler
+```bash
+sudo gpasswd –d edip aws
+```
 
-•	Sudo gpasswd –a edip aws
-“Aws” grubuna edip kullanicisini ekler
-
-•	Sudo gpasswd –d edip aws
-“Aws” grubundan “edip” kullanicisini siler
-
-
-
-PAKET YÜKLEME ISLEMLERI
-
+# PAKET YÜKLEME ISLEMLERI
 
 •	Sudo yum update (Linux)
 Linuxte yüklü bütün paketleri güncellemek icin kullanilir. Herseyi tekrar onay olmadan günceller.
