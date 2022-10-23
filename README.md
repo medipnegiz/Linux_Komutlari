@@ -187,7 +187,7 @@ grep -B3 'veli' clarusway.txt
 grep -C3 'can' clarusway.txt
 ```
 
-### • dosya icerisinde “lin” isminden sonra sadece “u” olanlari listeler
+### • Dosya icerisinde “lin” isminden sonra sadece “u” olanlari listeler
 ```bash
 grep lin[u] clarusway.txt
 ```
@@ -515,65 +515,97 @@ sudo gpasswd –d edip aws
 
 # PAKET YÜKLEME ISLEMLERI
 
-•	Sudo yum update (Linux)
-Linuxte yüklü bütün paketleri güncellemek icin kullanilir. Herseyi tekrar onay olmadan günceller.
+### • Linuxte yüklü bütün paketleri güncellemek icin kullanilir. "-y --> yes" tekrar onay almadan güncellemesini saglar
+```bash
+sudo yum update -y
+```
 
-•	Sudo apt update (Ubuntu)
-Ubuntu makinelerde güncelleme yapmak icin kullanilir. Güncellenecek dosyalari listeler ve bizden onay ister.
+### • Ubuntu makinelerde güncelleme yapmak icin kullanilir. Güncellenecek dosyalari listeler ve bizden onay ister
+```bash
+sudo apt update 
+```
 
-•	Sudo apt upgrade (Ubuntu)
-Ubuntu makinelerde güncellemesi sorgulanan dosyalarin güncellenmesi icin kullanilir.
+### • Ubuntu makinelerde güncellemesi sorgulanan dosyalarin güncellenmesi icin kullanilir
+```bash
+sudo apt upgrade 
+```
 
-•	Sudo yum install git (Linux)
-Linux makineye git uygulamasi yüklemek icin kullanilir
+### • Linux makineye git uygulamasi yüklemek icin kullanilir
+```bash
+sudo yum install git
+```
 
-•	Git -- version
-Git uygulamasinin versiyonunu ögrenmek icin kullanilir
+### • Git uygulamasinin versiyonunu ögrenmek icin kullanilir
+```bash
+git -- version
+```
 
-•	Sudo yum remove git (Linux)
-Linux makineden git uygulamasini kaldirmak icin kullanilir. Uygulamanin baglantili dosyalarini kaldirmaz. Version kisminda git versionu görünür.
+### • Linux makineden git uygulamasini kaldirmak icin kullanilir. Uygulamanin baglantili dosyalarini kaldirmaz. Version kisminda git versionu görünür
+```bash
+sudo yum remove git
+```
 
-•	Sudo apt remove git (Ubuntu)
-Ubuntu makinede git uygulamasini kaldirmak icin kullanilir
+### • Ubuntu makinede git uygulamasini kaldirmak icin kullanilir
+```bash
+sudo apt remove git 
+```
 
-•	Sudo yum autoremove git –y (Linux)
-Linuxte git uygulamasini tüm ek baglantilari ve yapilandirma paketleri ile birlikte onay istemeden kaldirir
+### • Linuxte git uygulamasini tüm ek baglantilari ve yapilandirma paketleri ile birlikte onay istemeden kaldirir
+```bash
+sudo yum autoremove git –y
+```
 
-•	Sudo apt purge git (Ubuntu)
-Ubuntuda “Git” uygulamasini ve yapilandirma paketlerinin hespini kaldirir
+### • Ubuntuda “Git” uygulamasini ve yapilandirma paketlerinin hespini kaldirir
+```bash
+sudo apt purge git
+```
 
-•	Sudo yum info git (Linux)
-Linuxte “Git” uygulamasi hakkinda bilgileri listelemek icin kullanilir
+### • Linuxte “Git” uygulamasi hakkinda bilgileri listelemek icin kullanilir
+```bash
+sudo yum info git
+```
 
+### • Ubuntuda “Git”  uygulamasi hakkinda bilgileri listeler
+```bash
+sudo apt info git
+```
 
-•	Sudo apt info git (Ubuntu)
-Ubuntuda “Git”  uygulamasi hakkinda bilgileri listeler
+### • Linux icin yüklü olan ve yüklenebilir bütün paketleri listeler
+```bash
+sudo yum list | more
+```
 
-•	Sudo yum list | more (Linux)
-Linux icin yüklü olan ve yüklenebilir bütün paketleri listeler
+### • Linuxte “Git” uygulamasinin yüklü dosyalarini ve versiyonunu listeler. Daha güncel bir versiyonu varsa onu da listeler
+```bash
+sudo yum list git
+```
 
-•	Sudo yum list git (Linux)
-Linuxte “Git” uygulamasinin yüklü dosyalarini ve versiyonunu listeler. Daha güncel bir versiyonu varsa onu da listeler
+### • Linuxte yüklü olan bütün uygulamalari listelemek icin kullanilir
+```bash
+sudo yum list installed | more
+```
 
-•	Sudo yum list installed | more (Linux)
-Linuxte yüklü olan bütün uygulamalari listelemek icin kullanilir
+### • Ubuntu da yüklü olan bütün uygulamalari listelemek icin kullanilir
+```bash
+sudo apt list --installed
+```
 
-•	Sudo apt list --installed (Ubuntu)
-Ubuntu da yüklü olan bütün uygulamalari listelemek icin kullanilir
+### • Linuxte “Git” uygulamasinin yüklenebilir tüm sürümlerini listelemek icin kullanilir
+```bash
+sudo yum --showduplicates list git
+```
 
-•	Sudo yum --showduplicates list git (Linux)
-Linuxte “Git” uygulamasinin yüklenebilir tüm sürümlerini listelemek icin kullanilir
+### • Linuxte “Git” uygulamasinin istenilen versiyonunu yüklemek icin kullanilir
+```bash
+sudo yum install git-2.14.5-1.amzn2
+```
 
-•	Sudo yum install git-2.14.5-1.amzn2 (Linux)
-Linuxte “Git” uygulamasinin istenilen versiyonunu yüklemek icin kullanilir
+### • Linuxte “Git” uygulamasini güncellemek icin kullanilir. Onay istemez
+```bash
+sudo yum update git –y
+```
 
-•	Sudo yum update git –y (Linux)
-Linuxte “Git” uygulamasini güncellemek icin kullanilir. Onay istemez.
-
-
-
-
-FILTRE KULLANIM KOMUTLARI
+# FILTRE KULLANIM KOMUTLARI
 
 •	Cat –n ali.txt
 Listeleme yaparken “-n” ile satir sayilari ile beraber gösterir
