@@ -277,6 +277,7 @@ curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
 echo edip | xargs –I {} echo {} {} 	# büyük i
 ```
 
+## Go to [Index](#index)
 
 # ORTAM DEGISKENLERI
 
@@ -414,6 +415,7 @@ MYVAR=’my name is $PATH’
 MYVAR=’”my name is \$PATH”
 ```
 
+## Go to [Index](#index)
 
 # KULLANICI KOMUTLARI
 
@@ -527,6 +529,8 @@ sudo gpasswd –a edip aws
 sudo gpasswd –d edip aws
 ```
 
+## Go to [Index](#index)
+
 # PAKET YÜKLEME ISLEMLERI
 
 ### • Linuxte yüklü bütün paketleri güncellemek icin kullanilir. "-y --> yes" tekrar onay almadan güncellemesini saglar
@@ -618,6 +622,8 @@ sudo yum install git-2.14.5-1.amzn2
 ```bash
 sudo yum update git –y
 ```
+
+## Go to [Index](#index)
 
 # FILTRE KULLANIM KOMUTLARI
 
@@ -776,6 +782,8 @@ echo –e “ahmet \n murat”
 ./myscript 1> cikti.txt 2> error.txt
 ```
 
+## Go to [Index](#index)
+
 # SED, AWK VE CRONTAB KOMUTLARI
 
 ### • Bu komut ali.txt dosyasi icindeki ilk “linux” ifadesini bulur ve onu “ubuntu” olarak degistirir. Büyük-kücük harf duyarli degil. (-i) degisikligi dosyaya uygular ve kaydeder
@@ -823,7 +831,6 @@ awk '{ if($7 == "can") print $0}' ahmet.txt
 crontab –e
 ```
 
-
 ### • Yildizlar zaman bakimindan ayarlamak icin kullanilir. Hicbir deger girilmezse dakika basi islem yapar
 ```bash
 * * * * *  date >> /home/ec2-user/veriler.log 
@@ -848,6 +855,8 @@ crontab –e
 ```bash
 crontab –ls
 ```
+
+## Go to [Index](#index)
 
 # SHELL SCRIPT KOMUTLARI
 
@@ -1036,6 +1045,8 @@ welcome (){		# function yazmadan direk fonksiyon ismi verilebilir
 }
 welcome
 ```
+
+## Go to [Index](#index)
 
 # DERSTEKI CALISMALAR
 
