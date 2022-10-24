@@ -121,6 +121,24 @@ tac deneme.txt
 more deneme.txt
 ```
 
+### • Gecerli dizindeki klasörlerin ve dosyaların listesini gösterir
+```bash
+ls
+```
+```bash
+o ls -a			-->	dizindeki gizli dosyalari da göstermek icin kullanilir
+o ls -l			-->	dizindeki dosya iceriklerini detaylari ile birlikte gösterir
+o ls -h			-->	dizindeki dosyalari insanin okuyabilecegi sekilde listeler
+o ls -ls		-->	dizindeki dosyalarin boyutuna göre siralama yapar
+o ls -t			-->	dizindeki dosyalari tarihe göre siralar
+o ls -r			-->	dizindeki dosyalari tersten siralayarak gösterir
+o ls *.*		-->	sadece klasör icindeki dosyalari ve uzantilari gösterir
+o ls -l *.doc*		-->	sadece ".doc" uzantili dosyalari listeler
+o ls *			--> 	dizindeki dosyalari icindekiler ile birlikte listeler
+o ls *[Mm]*		-->	dizindeki isminin icinde "m" gecen bütün dosyalari listeler
+o ls ????		-->	Soru isareti sayisi kadar uzunlukta olan isimli dosyalari listeler
+```
+
 ### • Tüm yazilari indirir ama satir satir inerek gösterir
 ```bash
 ls --help | more
@@ -166,14 +184,14 @@ find /lesson –iname den\*
 grep ‘naber’ deneme.txt
 ```
 ```bash
-o	Grep –i			--> 	Büyük/kücük harf duyarsiz sekilde görüntüler
-o	Grep –n			-->	Eslesen dizeleri satir numaralari ile görüntüler
-o	Grep –v			-->	Eslesmeyen satirlari görüntüler
-o	Grep –c			-->	Kac satir eslesdiyse sayisini döndürür
-o	Grep –o “ali”		-->	Dosya icinde sadece eslesen kelimeyi getirir
-o	Grep –w			-->	Sadece kelime olarak arar. Tam kelime olarak bulur
-o	Grep “^li”		-->	“li” ile baslayan satirlari listeler
-o	Grep “dur$”		-->	sonu “dur “ ile biten satirlari listeler
+o Grep –i		--> 	Büyük/kücük harf duyarsiz sekilde görüntüler
+o Grep –n		-->	Eslesen dizeleri satir numaralari ile görüntüler
+o Grep –v		-->	Eslesmeyen satirlari görüntüler
+o Grep –c		-->	Kac satir eslesdiyse sayisini döndürür
+o Grep –o “ali”		-->	Dosya icinde sadece eslesen kelimeyi getirir
+o Grep –w		-->	Sadece kelime olarak arar. Tam kelime olarak bulur
+o Grep “^li”		-->	“li” ile baslayan satirlari listeler
+o Grep “dur$”		-->	sonu “dur “ ile biten satirlari listeler
 ```
 
 ### • İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler (-l : listele,   -R : alt dosya ve klasörler dahil)
