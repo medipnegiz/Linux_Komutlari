@@ -808,14 +808,21 @@ echo –e “ahmet \n murat”
 
 # SED, AWK VE CRONTAB KOMUTLARI
 
-### • Bu komut ali.txt dosyasi icindeki ilk “linux” ifadesini bulur ve onu “ubuntu” olarak degistirir. Büyük-kücük harf duyarli degil. (-i) degisikligi dosyaya uygular ve kaydeder
+### • Bu komut ali.txt dosyasi icindeki ilk “linux” ifadesini bulur ve onu “ubuntu” olarak degistirir. Büyük-kücük harf duyarli degil. 
 ```bash
 sed –i ‘s/linux/ubuntu/’ ali.txt
 ```
+```bash
+o -i		-->	 degisikligi dosyaya uygular ve kaydeder
+```
 
-### • Ali.txt dosyasindaki bütün “linux” ifadelerini “ubuntu” olarak degistirir. (i) büyük-kücük duyarsiz, (g) bütün ifadeleri degistir
+### • Ali.txt dosyasindaki bütün “linux” ifadelerini “ubuntu” olarak degistirir. 
 ```bash
 sed ‘s/linux/ubuntu/ig’ ali.txt
+```
+```bash
+o i		-->	 büyük-kücük duyarsiz 
+o g		-->	 bütün ifadeleri degistir
 ```
 
 ### • Ali.txt dosyasindaki buldugu 2. “linux” ifadesini “ubuntu” yapar
