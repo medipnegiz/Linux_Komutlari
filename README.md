@@ -555,9 +555,13 @@ sudo gpasswd –d edip aws
 
 # PAKET YÜKLEME ISLEMLERI
 
-### • Linuxte yüklü bütün paketleri güncellemek icin kullanilir. "-y --> yes" tekrar onay almadan güncellemesini saglar
+### • Linuxte yüklü bütün paketleri güncellemek icin kullanilir
 ```bash
 sudo yum update -y
+```
+```bash
+o -y 		--> 	(yes) tekrar onay almadan güncellemesini saglar
+o -q		-->	(quiet) ilerleme asamalarini atlar
 ```
 
 ### • Ubuntu makinelerde güncelleme yapmak icin kullanilir. Güncellenecek dosyalari listeler ve bizden onay ister
