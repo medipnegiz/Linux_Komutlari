@@ -285,9 +285,13 @@ curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
 ```
 
 ### • Burada sayfadan verileri alir ve /home/ubuntu/ altinda “deneme” olarak kaydeder 
-!!! –L --> location belirtmek icin    -o --> ciktiyi dosya olarak kaydetmek icin kullanilir.
 ```bash
 curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
+```
+```bash
+o –L 		--> 	Location belirtmek icin    
+o -o 		--> 	Ciktiyi dosya olarak kaydetmek icin kullanilir
+o -s		-->	Sessiz mod anlamindadir. Ilerleme yada hata gösterme demektir
 ```
 
 ### • Bu komut icine girilen degeri istenilen sayida tekrarlamak icin kullanilir
