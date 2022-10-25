@@ -289,9 +289,11 @@ curl https://raw.githubusercontent.com/awsdevopsteam/route-53/master/index.html
 curl –L https://raw.githubusercontent.com/awsdevopsteam -o /home/ubuntu/deneme
 ```
 ```bash
-o –L 		--> 	Location belirtmek icin    
-o -o 		--> 	Ciktiyi dosya olarak kaydetmek icin kullanilir
-o -s		-->	Sessiz mod anlamindadir. Ilerleme yada hata gösterme demektir
+o –L 		--> 	(Location) yer belirtmek icin    
+o -o 		--> 	(output) ciktiyi dosya olarak kaydetmek icin kullanilir
+o -s		-->	(silent) sessiz mod anlamindadir. Ilerleme yada hata gösterme demektir
+o -f		-->	(fail) sunucu hatalarinda sessiyce basarisiz olmasi icin kullanilir
+o -S		--<	(show-error) eger basarisiz olursa bir hata mesaji almak icin kullanilir
 ```
 
 ### • Bu komut icine girilen degeri istenilen sayida tekrarlamak icin kullanilir
