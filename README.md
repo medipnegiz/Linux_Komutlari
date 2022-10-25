@@ -581,7 +581,7 @@ sudo yum install git
 
 ### • Git uygulamasinin versiyonunu ögrenmek icin kullanilir
 ```bash
-git -- version
+git --version
 ```
 
 ### • Linux makineden git uygulamasini kaldirmak icin kullanilir. Uygulamanin baglantili dosyalarini kaldirmaz. Version kisminda git versionu görünür
