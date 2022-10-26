@@ -144,14 +144,35 @@ o ls ????		-->	Soru isareti sayisi kadar uzunlukta olan isimli dosyalari listele
 ls --help | more
 ```
 
+### • Terminal kadar yazi gösterir ve satir satir inilir. “q” ile cikilir
+```bash
+ls --help | less
+```
+
 ### • Bir dosyanin icerigini görüntülememize ve dosya icerisinde gezinmemizi saglar
 ```bash
 less deneme.txt
 ```
 
-### • Terminal kadar yazi gösterir ve satir satir inilir. “q” ile cikilir
+### • Bu komut ile klasörler arasi gecis yapariz
 ```bash
-ls --help | less
+cd /home/ubuntu
+```
+```bash
+o cd /			-->	bu komut ile kök dizine gidilir
+o cd, cd ~, cd $home	-->	bu komutlarin hepsi ayni anlamdadir ve ana dizine gider
+o cd ..			-->	bir üst dizine gecmek icin kullanilir
+o cd -			-->	bir önceki dizine gecmek icin kullanilir
+o cd edip\dosya		-->	adi "edip dosya" olan klasöre gecmek icin kullanilir. "\" isareti bosluk(space) anlamindadir
+```
+
+### • Dosya yada klasör silmek icin kullanilir (ici dolu klasörleri silmez)
+```bash
+rm edip.txt
+```
+```bash
+o rm -r			-->	(recursive) bu komut ic ice klasör silmek icin kullanilir (ici dolu olsa da siler)
+o rm -f			--> 	(force) silme isleminde zorlamak icin kullanilir
 ```
 
 ### • Bulundugumuz dizinde bulunan tüm dosyalari alt klasörler ile birlikte listeler
