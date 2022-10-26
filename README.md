@@ -254,7 +254,7 @@ chmod +x edip.sh
 
 o 1 		-->	dosyanin ne oldugunu belirtir
 o 2		-->	user icin calistirma izinleri
-o 3 		-->	grup icin calistirma izinleri
+o 3 		-->	group icin calistirma izinleri
 o 4		--> 	digerleri icin calistirma izinleri
 ```
 ```bash
