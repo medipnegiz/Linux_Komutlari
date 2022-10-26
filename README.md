@@ -14,6 +14,7 @@
 * [Paket Yükleme Islemleri](#paket-yükleme-islemleri)
 * [Filtre Kullanim Komutlari](#filtre-kullanim-komutlari)
 * [Sed, Awk ve Crontab Komutlari](#sed-awk-ve-crontab-komutlari)
+* [Sistem ile Ilgili Komutlar](#sistem-ile-ilgili-komutlar)
 * [Shell Script Komutlari](#shell-script-komutlari)
 * [Dersteki Calismalar](#dersteki-calismalar)
 
@@ -34,6 +35,11 @@ sudo su
 ### • “Su” Switch-User demektir. Bu komut ile kullanici profilini gecis yapilir
 ```bash
 su ec2-user
+```
+
+### • O anki durumda kullanicinin kim oldugunu ögrenmek icin kullanilir
+```bash
+whoami
 ```
 
 ### • Komutun manuel kitapcigini görüntülemek icin kullanilir
@@ -90,25 +96,11 @@ tail –3 test.txt
 ```bash
 cat test.txt
 ```
-
-### • Dosyalari birlestirerek görüntülemek icin kullanilir
 ```bash
-cat test1.txt test2.txt
-```
-
-### • Iki dosyayi birlestirir ve “file” isminde dosya olusturarak icine kaydeder
-```bash
-cat test1.txt test2.txt > file
-```
-
-### • “Deneme” isminde dosya olusturur ve komut satirindan icine ekleme yapilir (Ctrl + d ile cikis yapilir)
-```bash
-cat > deneme.txt
-```
-
-### • “Deneme” dosyasi icindekileri “test” adinda bir dosya olusturarak icine kopyalar
-```bash
-cat deneme.txt > test.txt
+o cat test1.txt test2.txt		-->	Dosyalari birlestirerek görüntülemek icin kullanilir
+o cat test1.txt test2.txt > file	-->	Iki dosyayi birlestirir ve “file” isminde dosya olusturarak icine kaydeder
+o cat > deneme.txt			-->	“Deneme” isminde dosya olusturur ve komut satirindan icine ekleme yapilir (Ctrl + d ile cikis yapilir)
+o cat deneme.txt > test.txt		-->	“Deneme” dosyasi icindekileri “test” adinda bir dosya olusturarak icine kopyalar
 ```
 
 ### • Dosya icerigini tersten baslayarak görüntüler
@@ -147,6 +139,16 @@ ls --help | more
 ### • Terminal kadar yazi gösterir ve satir satir inilir. “q” ile cikilir
 ```bash
 ls --help | less
+```
+
+### • Komutun kullanim ve ek bilgilerini listeler
+```bash
+man pwd
+```
+
+### • Komutun kullanim ve ek bilgilerini listeler
+```bash
+info chmod
 ```
 
 ### • Bir dosyanin icerigini görüntülememize ve dosya icerisinde gezinmemizi saglar
@@ -229,11 +231,6 @@ o echo "merhaba" >> ali.txt		-->	ali.txt dosyasi varsa dosyanin en sonuna metni 
 o echo "" can.txt			-->	can.txt dosyasinin icini temizlemek icin kullanilir
 ```
 
-### • Bir dosyanin icini görüntülemek icin kullanilir
-```bash
-cat edip.txt
-```
-
 ### • Linuxte yazilan komutlari listelemek icin kullanilir
 ```bash
 history
@@ -278,6 +275,16 @@ o chmod ug=r edip.sh		--> 	dosyaya sadece user ve group icin okuma izni verir
 ### • Ekrani temizlemek icin kullanilir
 ```bash
 clear
+```
+
+### • Bir komutu kisayol olarak tanimlamak icin kullanilir
+```bash
+alias edip="ls -al"
+```
+
+### • Tanimli bir alias kisayolunu silmek icin kullanilir
+```bash
+unalias edip
 ```
 
 ### • Bulundugumuz dizinde bulunan tüm dosyalari alt klasörler ile birlikte listeler
@@ -1015,6 +1022,55 @@ crontab –e
 ### • Crontab dosyasinda kayitli komutlari listelemek icin kullanilir
 ```bash
 crontab –ls
+```
+
+## Go to [Index](#index)
+
+# SISTEM ILE ILGILI KOMUTLAR
+
+### • Bir bölümü bicimlendirmek icin kullanilir
+```bash
+mkfs
+```
+
+### • Bilgisayarda ne kadar RAM kullanildigini gösterir
+```bash
+top
+```
+
+### • Islemci hakkinda bilgi almak icin kullanilir
+```bash
+cat /proc/cpuinfo
+```
+
+### • Karsidaki bir sunucuya ping atmak icin kullanilir
+```bash
+ping 192.168.2.1
+```
+
+### • Internet baglantimizi göstermek icin kullanilir
+```bash
+netstat –n
+```
+
+### • Anakartin üzerin takilan soketleri ve üreticilerini gösterir
+```bash
+lspci
+```
+
+### • Detayli bir sekilde bilgisayarin donanim özelliklerini gösterir
+```bash
+lshw
+```
+
+### • Calisan bir programi terminal üzerinden durdurmak icin numarasi girilir ve durdurulur
+```bash
+kill 43...
+```
+
+### • Bilgisayarda calisan programlar ve kullandiklari RAM orani listelenir
+```bash
+htop
 ```
 
 ## Go to [Index](#index)
