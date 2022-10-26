@@ -173,6 +173,80 @@ rm edip.txt
 ```bash
 o rm -r			-->	(recursive) bu komut ic ice klasör silmek icin kullanilir (ici dolu olsa da siler)
 o rm -f			--> 	(force) silme isleminde zorlamak icin kullanilir
+o rmdir			-->	bu komut ile ici bos klasörler silinebilir
+o rmdir -p edip/dene	-->	(parents) ic ice klasör silmek icin kullanilir
+```
+
+### • Klasör olusturmak icin kullanilir
+```bash
+mkdir edip
+```
+```bash
+o mkdir dosya{1..5}		-->	ilk ismi "dosya" olan bes adet klasör olusturur (dosya1, dosya2 ...)
+o mkdir .gizli			--> 	ismin basindaki "." ile gizli klasör olusturulur
+o mkdir -p edip/dene		-->	(parents) ic ice klasör olusturmak icin kullanilir
+o mkdir -m 444 edip		-->	(mode) edip adinda sadece yazma izinleri olan bir klasör olusturur
+```
+
+### • Istenilen uzantiya sahip dosya olusturmak icin kullanilir
+```bash
+touch edip.txt edip.yml
+```
+```bash
+o touch -t 20072008		-->	Dosyanin olusturulma tarihini istedigimiz bir tarih olarak yapmamizi saglar
+```
+
+### • Bir dosyanin adini degistirmek veya bir dosyayi tasimak icin kullanilir
+```bash
+mv edip.doc ali.doc
+```
+```bash
+o mv edip.doc n/can.doc		-->	Dosyayi bir yere tasimak icin kullanilir. Istersek ismini tasima sirasinda degistirebiliriz
+```
+
+### • Bir dosyayi bir yerden baska bir yere kopyalamak icin kullanilir. Istersek kopyalama sirasinda isim degistirebiliriz
+```bash
+cp edip.doc home/ali.doc
+```
+
+### • Dosya varsa onu acar eger yoksa yeni dosya olusturur ve "nano" uygulamasinda acar
+```bash
+nano edip.txt
+```
+
+### • Dosya varsa onu acar eger yoksa yeni dosya olusturur ve "vim" uygulamasinda acar
+```bash
+vim edip.txt
+```
+
+### • Ekrana istedigimiz yaziyi yazdirmak icin kullanilir
+```bash
+echo "selam naber"
+```
+```bash
+o echo "merhaba" > ali.txt		-->	ali.txt dosyasi varsa icini temizler ve bunu yazar yoksa olusturur yazar
+o echo "merhaba" >> ali.txt		-->	ali.txt dosyasi varsa dosyanin en sonuna metni ekler yoksa olusturur yazar
+o echo "" can.txt			-->	can.txt dosyasinin icini temizlemek icin kullanilir
+```
+
+### • Bir dosyanin icini görüntülemek icin kullanilir
+```bash
+cat edip.txt
+```
+
+### • Linuxte yazilan komutlari listelemek icin kullanilir
+```bash
+history
+```
+```bash
+o history 10			-->	girilen son 10 kodu listeler
+o history | grep touch		-->	touch ile ilgili girilen komutlari listeler
+o history !15			-->	15. girilen kodu tekrar calistirmak icin kullanilir
+```
+
+### • Ekrani temizlemek icin kullanilir
+```bash
+clear
 ```
 
 ### • Bulundugumuz dizinde bulunan tüm dosyalari alt klasörler ile birlikte listeler
