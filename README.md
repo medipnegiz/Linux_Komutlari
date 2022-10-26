@@ -244,6 +244,37 @@ o history | grep touch		-->	touch ile ilgili girilen komutlari listeler
 o history !15			-->	15. girilen kodu tekrar calistirmak icin kullanilir
 ```
 
+### • (changemode) Dosya izinlerini degistirmek icin kullanilir. Burada "edip" dosyasina calisma izni verir
+```bash
+chmod +x edip.sh
+```
+```bash
+- (rwx)(rw-)(r--)
+1   2    3    4	
+
+o 1 		-->	dosyanin ne oldugunu belirtir
+o 2		-->	user icin calistirma izinleri
+o 3 		-->	grup icin calistirma izinleri
+o 4		--> 	digerleri icin calistirma izinleri
+```
+```bash
+o 0		-->	tüm izinler kapali
+o 1		-->	sadece calistirma izni verir
+o 2		-->	sadece yazma izni verir
+o 3		-->	yazma - calistirma izinlerini verir
+o 4		-->	sadece okuma izni verir
+o 5		-->	okuma - calistirma izinlerini verir
+o 6		-->	okuma - yazma izinlerini verir
+o 7 		--> 	okuma - yazma - calistirma izinlerini verir
+```
+```bash
+o chmod -x edip.sh		-->	burada tüm kullanicilarin calistirma iznini alir	
+o chmod +rw edip.sh		-->	tüm kullanicilar icin okuma ve yazma izni verir
+o chmod 777 edip.sh		-->	burada dosyaya tüm kullanicilar icin bütün izinleri verir 
+o chmod ugo=rwx	edip.sh		--> 	u >> user, g >> group, o >> other.  Tüm kullanicilar icin bütün izinleri verir 
+o chmod ug=r edip.sh		--> 	dosyaya sadece user ve group icin okuma izni verir 
+```
+
 ### • Ekrani temizlemek icin kullanilir
 ```bash
 clear
