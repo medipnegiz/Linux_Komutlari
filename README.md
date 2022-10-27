@@ -572,6 +572,20 @@ MYVAR=’my name is $PATH’
 MYVAR=’”my name is \$PATH”
 ```
 
+### • Bu komut ile shell'de tanimlanan degiskenleri yeni dosyaya value olarak yazdirabiliriz
+```bash
+envsubst < edip.txt > ali.txt
+```
+```bash
+edip.txt	>> Selam $ABC
+export ABC="kanka"
+
+* buradan sonra "envsubst" komutu calisirsa ali.txt dosyasina söyle bir deger yazilir
+
+envsubst < edip.txt > ali.txt		-->	var olan bir dosyanin sonuna ekleme yapmak icin ">>" kullanilabilir
+ali.txt		>> selam kanka
+```
+
 ## Go to [Index](#index)
 
 # KULLANICI KOMUTLARI
