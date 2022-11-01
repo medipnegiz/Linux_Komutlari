@@ -93,6 +93,8 @@ o tail –3 test.txt		-->	Dosyanin son 3 satirini görüntülemek icin kullanili
 cat test.txt
 ```
 ```bash
+o cat -b deneme.txt			-->	Dosyanin tüm satirlarini numaralandirarak listeler
+o cat -n deneme.txt			-->	Dosyanin sadece dolu satirlarini numaralandirarak listeler
 o cat test1.txt test2.txt		-->	Dosyalari birlestirerek görüntülemek icin kullanilir
 o cat test1.txt test2.txt > file	-->	Iki dosyayi birlestirir ve “file” isminde dosya olusturarak icine kaydeder
 o cat > deneme.txt			-->	“Deneme” isminde dosya olusturur ve komut satirindan icine ekleme yapilir (Ctrl + d ile cikis yapilir)
@@ -547,6 +549,16 @@ who
 w
 ```
 
+### • Dosyalarin sahipligini degistirmek icin kullanilir. Kullanici yada group yazilabilir
+```bash
+chown “ali -yada- group1” “deneme.xt”
+```
+
+### • Belirtilen user tarafından açılmış dosyaları listeler
+```bash
+lsof -u “edip”
+```
+
 ### • Kullanici olusturma ile alakali configuration dosyasi acilir ve degisiklikler yapilabilir
 ```bash
 sudo nano /etc/login.defs
@@ -587,9 +599,14 @@ sudo passwd –expire edip
 sudo userdel –r edip 
 ```
 
-### • Kullanicin id bilgisini görüntülemek icin kullanilir
+### • Kullanicin ID bilgisini görüntülemek icin kullanilir
 ```bash
 id edip
+```
+```bash
+o id -g		-->	Mevcut group ID listeler
+o id -G		-->	Tüm group ID listeler
+o id -u		-->	Mevcut user ID listeler
 ```
 
 ### • Kayitli tüm kullanici bilgilerini listeler
@@ -754,11 +771,6 @@ sudo yum update git –y
 cat –n ali.txt
 ```
 
-### • Dosya icerigini tersten baslayarak listeler
-```bash
-tac edip.txt
-```
-
 ### • “Tee” komutu ile dosya icerisine yazi ekler ve ekranda gösterir ???
 ```bash
 cat edip.txt | tee ahmet.txt
@@ -843,6 +855,11 @@ sort ahmet.txt | uniq
 ### • İki dosyanin kesisimini almak icin kullanilir. İlk sütun sadece dosya 1 de olanlar. İkinci sütun sadece dosya 2 de olanlar. Ücüncü sütun iki dosyada da olanlari listeler. !!! sort komutu ile birlikte kullanilmasi zorunludur
 ```bash
 comm file1.txt file2.txt 
+```
+
+### • Iki dosya arasindaki farklari listelemek icin kullanilir
+```bash
+diff “test-1.txt” “test-2.txt”
 ```
 
 ### • Tek satirda birden fazla komut verilebilir. “&&” ilk komut basarili ise diger komutu calistirir
@@ -975,9 +992,30 @@ mkfs
 top
 ```
 
+### • Diskin kullanim durumunu listelemek icin kullanilir
+```bash
+free
+```
+```bash
+o free -b 		-->	Disk kullanimini Byte olarak listeler
+o free -k		-->	Disk kullanimini Kilobyte olarak listeler
+o free -m		-->	Disk kullanimini Megabyte olarak listeler
+o free -g		-->	Disk kullanimini Gigabyte olarak listeler
+```
+
 ### • Islemci hakkinda bilgi almak icin kullanilir
 ```bash
 cat /proc/cpuinfo
+```
+
+### • Bulundugumuz agin route ve table bilgilerini listeler
+```bash
+route
+```
+
+### • ICMP protokolünü kullanarak belirtilen hedefe gönderilen paketin kac atlamada hedefe ulastıgını gösterir
+```bash
+traceroute google.com
 ```
 
 ### • Karsidaki bir sunucuya ping atmak icin kullanilir
@@ -985,9 +1023,33 @@ cat /proc/cpuinfo
 ping 192.168.2.1
 ```
 
+### • Bu iki komut belirtilen adresin NS ve SOA kayitlarini siralamak icin kullanilir
+```bash
+nslookup github.com
+```
+```bash
+dig google.com
+```
+
+### • Bu komut ping ve traceroute komutlarini kombine eder. Gercek zamanlı olarak gönderilen pakette gerceklesen veri kayiplarini ve gecikme sürelerini detayli olarak listeler
+```bash
+mtr google.com 
+```
+```bash
+mtr -n --report google.com		-->	Hedefe sadece 10 paket atarak sonucu rapor halinde listeler. "-n" parametresi DNS çözümlemesini engeller
+```
+
 ### • Internet baglantimizi göstermek icin kullanilir
 ```bash
 netstat –n
+```
+
+### • Makinada bulunan tüm network interface’lerin durumunu sorgular ve interfacelerden gönderilen paketleri yakalar
+```bash
+o tcpdump --list-interfaces		-->	Tüm arayüzleri listeler
+o tcpdump 				-->	Tüm arayüzlerin paket iletimini dinler
+o tcpdump -i eth0			-->	Belirtilen arayüzün paket iletimini dinler
+o tcpdump -i eth0 -c 10 		-->	Paket dinleme islemini 10 ile sinirlar
 ```
 
 ### • Anakartin üzerin takilan soketleri ve üreticilerini gösterir
@@ -1008,6 +1070,16 @@ kill 43...
 ### • Bilgisayarda calisan programlar ve kullandiklari RAM orani listelenir
 ```bash
 htop
+```
+
+### • CPU ve memory kullanımını gösterir, htop komutundan farklı olarak çıktıyı rapor halinde sunar
+```bash
+ps aux
+```
+```bash
+o a		-->	 Tüm kullanıcıların islemlerini gösterir
+o u		-->	 Islemin sahibini gösterir
+o x 		-->	 Terminale baglı olmayan islemleri gösterir
 ```
 
 ## Go to [Index](#index)
