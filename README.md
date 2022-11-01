@@ -76,20 +76,16 @@ mkdir –p /home/deneme/edip
 ```bash
 head test.txt
 ```
-
-### • Dosyanin ilk 4 satirini listelemek icin kullanilir
 ```bash
-head -4 test.txt
+o head -4 test.txt		-->	Dosyanin ilk 4 satirini listelemek icin kullanilir
 ```
 
 ### • Dosyanin son 10 satirini görüntülemek icin kullanilir
 ```bash
 tail test.txt
 ```
-
-### • Dosyanin son 3 satirini görüntülemek icin kullanilir
 ```bash
-tail –3 test.txt
+o tail –3 test.txt		-->	Dosyanin son 3 satirini görüntülemek icin kullanilir
 ```
 
 ### • Dosyanin icini görüntülemek icin kullanilir
@@ -291,25 +287,11 @@ unalias edip
 ```bash
 find .
 ```
-
-### • Home klasörü icerisindeki test.txt dosyasinin tam uzantisini görüntüler
 ```bash
-find /home –name test.txt
-```
-
-### • Lesson klasörü icindeki “den” ile baslayan bütün dosyalari listeler (Büyük-kücük harf duyarli)
-```bash
-find /lesson –name den\*
-```
-
-### • Lesson klasörü icindeki “.png” ile biten bütün dosyalari listeler
-```bash
-find /lesson –name *.png
-```
-
-### • Lesson klasörü icindeki “den” ile baslayan (büyük-kücük harf fark etmez) bütün dosyalari listeler
-```bash
-find /lesson –iname den\*
+o find /home –name test.txt		-->	Home klasörü icerisindeki test.txt dosyasinin tam uzantisini görüntüler
+o find /lesson –name den\*		-->	Lesson klasörü icindeki “den” ile baslayan bütün dosyalari listeler (Büyük-kücük harf duyarli)
+o find /lesson –name *.png		-->	Lesson klasörü icindeki “.png” ile biten bütün dosyalari listeler
+o find /lesson –iname den\*		-->	Lesson klasörü icindeki “den” ile baslayan (büyük-kücük harf fark etmez) bütün dosyalari listeler
 ```
 
 ### • Dosya icerisinde “naber” kelimesi olan tüm satiri görüntüler
@@ -317,54 +299,24 @@ find /lesson –iname den\*
 grep ‘naber’ deneme.txt
 ```
 ```bash
-o Grep –i		--> 	Büyük/kücük harf duyarsiz sekilde görüntüler
-o Grep –n		-->	Eslesen dizeleri satir numaralari ile görüntüler
-o Grep –v		-->	Eslesmeyen satirlari görüntüler
-o Grep –c		-->	Kac satir eslesdiyse sayisini döndürür
-o Grep –o “ali”		-->	Dosya icinde sadece eslesen kelimeyi getirir
-o Grep –w		-->	Sadece kelime olarak arar. Tam kelime olarak bulur
-o Grep “^li”		-->	“li” ile baslayan satirlari listeler
-o Grep “dur$”		-->	sonu “dur “ ile biten satirlari listeler
-```
-
-### • İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler (-l : listele,   -R : alt dosya ve klasörler dahil)
-```bash
-grep –iRl ‘naber’ 
-```
-
-### • İcinde ‘is’ olan bütün satirlari listeler. Dosya farketmeksizin
-```bash
-grep ‘is’ * 
-```
-
-### • Dosya icinde ‘ali’ ile eslesen satiri ve öncesindeki 3 satir daha listeler
-```bash
-grep -A3 'ali' clarusway.txt
-```
-
-### • Dosya icinde ‘veli’ ile eslesen satiri ve sonrasinda 3 satir daha listeler
-```bash
-grep -B3 'veli' clarusway.txt
-```
-
-### • Dosya icinde ‘can’ ile eslesen satiri, öncesinde ve sonrasinda 3 satir daha listeler
-```bash
-grep -C3 'can' clarusway.txt
-```
-
-### • Dosya icerisinde “lin” isminden sonra sadece “u” olanlari listeler
-```bash
-grep lin[u] clarusway.txt
-```
-
-### • Dosya icerisinde “lin” isminden sonra sadece harf olanlari listeler
-```bash
-grep lin[a-z] clarusway.txt
-```
-
-### • Dosya icerisinde “lin” isminden sonra sadece rakam olanlari listeler
-```bash
-grep lin[0-9] clarusway.txt
+o Grep –i			--> 	Büyük/kücük harf duyarsiz sekilde görüntüler
+o Grep –n			-->	Eslesen dizeleri satir numaralari ile görüntüler
+o Grep –v			-->	Eslesmeyen satirlari görüntüler
+o Grep –l			-->	Listele anlamindadir
+o Grep –R			-->	Alt dosya ve klasörler dahil eder
+o Grep –c			-->	Kac satir eslesdiyse sayisini döndürür
+o Grep –w			-->	Sadece kelime olarak arar. Tam kelime olarak bulur
+o Grep –o “ali”			-->	Dosya icinde sadece eslesen kelimeyi getirir
+o Grep “^li”			-->	“li” ile baslayan satirlari listeler
+o Grep “dur$”			-->	Sonu “dur “ ile biten satirlari listeler
+o grep –iRl ‘naber’		-->	İcerisinde ‘naber’ gecen dosyalarin isimlerini listeler 
+o grep ‘is’ *			-->	İcinde ‘is’ olan bütün satirlari dosya farketmeksizin listeler
+o grep -A3 'ali' dene.txt	-->	Dosya icinde ‘ali’ ile eslesen satiri ve öncesindeki 3 satir daha listeler
+o grep -B3 'veli' dene.txt	-->	Dosya icinde ‘veli’ ile eslesen satiri ve sonrasinda 3 satir daha listeler
+o grep -C3 'can' dene.txt	-->	Dosya icinde ‘can’ ile eslesen satiri, öncesinde ve sonrasinda 3 satir daha listeler
+o grep lin[u] dene.txt		-->	Dosya icerisinde “lin” isminden sonra sadece “u” olanlari listeler
+o grep lin[a-z] dene.txt	-->	Dosya icerisinde “lin” isminden sonra sadece harf olanlari listeler
+o grep lin[0-9] dene.txt	-->	Dosya icerisinde “lin” isminden sonra sadece rakam olanlari listeler
 ```
 
 ### • “cd” komutunun help dosyasi icinde “director” gecen satirin önce-sonra 3 satir listeler
@@ -390,11 +342,6 @@ locate deneme.txt
 ### • Locate komutu günceller, böylece yeni eklenen veya silinen dosyalarin komunu yazdirilabilir
 ```bash
 sudo updatedb
-```
-
-### • Daha önce kullanilan “find” komutlarini listeler
-```bash
-history | grep ‘find’
 ```
 
 ### • Bu komutun hangi dizinde kayitli oldugunu gösterir
@@ -860,25 +807,11 @@ cat << SON > clarusway.txt
 ```bash
 cat clarusway.txt | tr ae OR 
 ```
-
-### • Normalde asagiya yeni satirda listelenecek olan metinleri tek bir satirda arada bir bosluk ile listeler
 ```bash
-cat count.txt | tr '\n' ' '
-```
-
-### • “tr” komutu ile birlikte kullanilan “-d” sil anlamindadir. Edip dosyasi icindeki belirli harfleri silmek icin kullanilir. Sadece cikti olarak gösterir, ana dosya etkilenmez
-```bash
-cat edip.txt | tr –d aeiou
-```
-
-### • Dosya icerisindeki bütün harfleri büyük olacak sekilde yazdirir. Dosya etkilenmez, sadece ciktida degisir
-```bash
-cat clarusway.txt | tr [a-z] [A-Z]
-```
-
-### • Tüm bosluklardan sonra “enter” eklemek icin kullanilir
-```bash
-cat edip.txt | tr [:space:] '\n'
+o cat edip.txt | tr '\n' ' '		-->	Normalde asagiya yeni satirda listelenecek olan metinleri tek bir satirda arada bir bosluk ile listeler
+o cat edip.txt | tr –d aeiou		-->	“-d” sil anlamindadir. Edip dosyasi icindeki belirli harfleri silmek icin kullanilir. Sadece cikti olarak gösterir, ana dosya etkilenmez
+o cat edip.txt | tr [a-z] [A-Z]		-->	Dosya icerisindeki bütün harfleri büyük olacak sekilde yazdirir. Dosya etkilenmez, sadece ciktida degisir
+o cat edip.txt | tr [:space:] '\n'	-->	Tüm bosluklardan sonra “enter” eklemek icin kullanilir
 ```
 
 ### • Edip dosyasi icindeki satir, kelime ve karakter olarak sayisini gösterir
@@ -992,25 +925,20 @@ sed ‘3 s/linux/ubuntu/g’ ali.txt
 ```bash
 awk ‘{print}’ ahmet.txt
 ```
-
-### • Ahmet dosyasinin sadece 3. Satirini listeler
 ```bash
-awk ‘{print $3}’ ahmet.txt
-```
-
-### • Ahmet dosyasinin icindeki "aksam" ile baslayan bütün satirlari listeler
-```bash
-awk ‘/aksam/ {print $0}’ ahmet.txt
-```
-
-### • Ahmet dosyasinin 7. Sütununda “can” ifadesi varsa o satiri komple listeler
-```bash
-awk '{ if($7 == "can") print $0}' ahmet.txt
+o awk ‘{print $3}’ ahmet.txt			-->	Ahmet dosyasinin sadece 3. Satirini listeler
+o awk ‘/aksam/ {print $0}’ ahmet.txt		-->	Ahmet dosyasinin icindeki "aksam" ile baslayan bütün satirlari listeler
+o awk '{ if($7 == "can") print $0}' ahmet.txt	-->	Ahmet dosyasinin 7. Sütununda “can” ifadesi varsa o satiri komple listeler
 ```
 
 ### • Zaman olarak planli yapmak istedigimiz islemler icin crontab dosyasini düzenlemek icin kullanilan bir komuttur
 ```bash
 crontab –e
+```
+
+### • Crontab dosyasinda kayitli komutlari listelemek icin kullanilir
+```bash
+crontab –ls
 ```
 
 ### • Yildizlar zaman bakimindan ayarlamak icin kullanilir. Hicbir deger girilmezse dakika basi islem yapar
@@ -1031,11 +959,6 @@ o 5  		-->  	bu kisim ayin gününü belirtmek icin kullanilir
 ```bash
 crontab –e
 25 12 * * * sudo yum install git –y 
-```
-
-### • Crontab dosyasinda kayitli komutlari listelemek icin kullanilir
-```bash
-crontab –ls
 ```
 
 ## Go to [Index](#index)
