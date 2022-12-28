@@ -188,6 +188,11 @@ o mkdir -p edip/dene		-->	(parents) ic ice klasör olusturmak icin kullanilir
 o mkdir -m 444 edip		-->	(mode) edip adinda sadece yazma izinleri olan bir klasör olusturur
 ```
 
+### • Sembolik link olusturmak icin kullanilir. Dosyanın birden fazla kopyasının olmasını değil ama birden fazla yerden erişilmesini istiyorsak, dosyayı bu farklı konumlara kopyalamak yerine birer sembolik(-s) link(ln) oluşturulabilir.
+```bash
+ln -s /opt/test/ec2/ linkdeneme		-->	Klasörün icinden "/opt/test/ec2/" adresine ulasmak icin "linkdeneme" icine gitmek yeterli
+```
+
 ### • Istenilen uzantiya sahip dosya olusturmak icin kullanilir
 ```bash
 touch edip.txt edip.yml
