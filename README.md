@@ -552,6 +552,7 @@ w
 ### • Dosyalarin sahipligini degistirmek icin kullanilir. Kullanici yada group yazilabilir
 ```bash
 chown “ali -yada- group1” “deneme.xt”
+chown ali:okul deneme.txt	-->	dosya sahibi(ali) ve group(okul) bir seferde verilebilir
 ```
 
 ### • Belirtilen user tarafından açılmış dosyaları listeler
