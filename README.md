@@ -197,6 +197,7 @@ ln -s /opt/test/ec2/ linkdeneme		-->	Klasörün icinden "/opt/test/ec2/" adresin
 ```bash
 touch edip.txt edip.yml
 ```
+
 ```bash
 o touch -t 20072008		-->	Dosyanin olusturulma tarihini istedigimiz bir tarih olarak yapmamizi saglar
 ```
@@ -212,6 +213,16 @@ o mv edip.doc n/can.doc		-->	Dosyayi bir yere tasimak icin kullanilir. Istersek 
 ### • Bir dosyayi bir yerden baska bir yere kopyalamak icin kullanilir. Istersek kopyalama sirasinda isim degistirebiliriz
 ```bash
 cp edip.doc home/ali.doc
+```
+
+### • edip_doc klasörünü sahip olduğu tüm dosyalar ile birlikte başka bir dizine kopyalamak icin kullanilir
+```bash
+cp -avR edip_doc home/test/edip_doc
+```
+```bash
+o -a 		-->	Dosyaya ait file mode, ownership, timestamps verilerini aktarır
+o -v		-->	Islemle ilgili süreci döker
+o -R		-->	Klasör yapısını olduğu gibi kopyalar
 ```
 
 ### • Dosya varsa onu acar eger yoksa yeni dosya olusturur ve "nano" uygulamasinda acar
