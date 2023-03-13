@@ -15,6 +15,7 @@
 * [Filtre Kullanim Komutlari](#filtre-kullanim-komutlari)
 * [Sed, Awk ve Crontab Komutlari](#sed-awk-ve-crontab-komutlari)
 * [Sistem ile Ilgili Komutlar](#sistem-ile-ilgili-komutlar)
+* [Uzak Bilgisayar Baglanti Komutlari](#uzak-bilgisayar-baglanti-komutlari)
 * [Shell Script Komutlari](#shell-script-komutlari)
 * [Dersteki Calismalar](#dersteki-calismalar)
 
@@ -1097,6 +1098,29 @@ ps aux
 o a		-->	 Tüm kullanıcıların islemlerini gösterir
 o u		-->	 Islemin sahibini gösterir
 o x 		-->	 Terminale baglı olmayan islemleri gösterir
+```
+
+## Go to [Index](#index)
+
+# UZAK BILGISAYAR BAGLANTI KOMUTLARI
+
+### • Uzaktaki bir bilgisayara baglanmak icin kullanilir
+```bash
+ssh -i ./edip.pem ec2-user@<IP-ADRESI>
+```
+
+### • Uzaktaki bir bilgisayara veri kopyalamak icin kullanilir
+```bash
+scp -i ./edip.pem ./edip.txt ec2-user@<IP-ADRESI>:/home/ubuntu/
+```
+```bash
+o -p		-->	 Hedef adreste port bilgisi girmek için kullanılır
+o -q		-->	 Yüzdelik dilimler ile arayüzde gösterilen transfer aşamasını kapatır/disable eder
+o -r 		-->	 Klasör kopyalamak için kullanılır
+o -v 		-->	 Hata ayıklama iletilerini görüntüler
+o -c 		-->	 Sıkıştırmayı etkinleştirir
+o -i 		-->	 Ortak anahtar kimlik doğrulaması veya özel anahtar (ssh key) dosyasını kullanmak için kullanılır
+o -l 		-->	 Band genisligini limitlemek için kullanılabilir
 ```
 
 ## Go to [Index](#index)
