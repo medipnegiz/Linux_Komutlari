@@ -223,7 +223,12 @@ cp -avR edip_doc home/test/edip_doc
 ```bash
 o -a 		-->	Dosyaya ait file mode, ownership, timestamps verilerini aktarır
 o -v		-->	Islemle ilgili süreci döker
-o -R		-->	Klasör yapısını olduğu gibi kopyalar
+o -R		-->	Klasör yapısını olduğu gibi kopyalar (gizli dosyalar dahil)
+o -f		-->	Gerekirse hedef dosyayı kaldırarak kopyalamaya zorlamak icin kullanilir
+o -i		-->	Kopyalanacak yerde ayni dosyadan varsa üzerine yazmadan önce sorar
+o -l		-->	Dosyalari belirtilen konuma kopyalamak yerine arada bag olusturur (Bir nevi kisayol)
+o -n		-->	Kopyalanacak yerde ayni dosyadan varsa üzerine yazma anlamindadir
+o -u		-->	Eger kopyalanacak dosya kaynaktaki dosyadan daha yeni ise güncelle anlamindadir
 ```
 
 ### • Dosya varsa onu acar eger yoksa yeni dosya olusturur ve "nano" uygulamasinda acar
