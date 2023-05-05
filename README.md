@@ -250,6 +250,7 @@ echo "selam naber"
 o echo "merhaba" > ali.txt		-->	ali.txt dosyasi varsa icini temizler ve bunu yazar yoksa olusturur yazar
 o echo "merhaba" >> ali.txt		-->	ali.txt dosyasi varsa dosyanin en sonuna metni ekler yoksa olusturur yazar
 o echo "" can.txt			-->	can.txt dosyasinin icini temizlemek icin kullanilir
+o echo -n edip.txt			-->	normalde echo komutu satir sonuna enter ekler. "-n" parametresi ile enter eklenmesi engellenir
 ```
 
 ### • Linuxte yazilan komutlari listelemek icin kullanilir
