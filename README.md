@@ -934,9 +934,10 @@ echo –e “ahmet \n murat”
 ## Go to [Index](#index)
 
 # DOSYA SIKISTIRMA VE ACMA KOMUTLARI
+
 ## tar komutu kullanimi
 
-### • Bu komut dosya sikistirmak icin kullanilir
+### • Bu komut dosyalari "tar" ile sikistirmak icin kullanilir
 ```bash
 tar -zcvf my-file.tar.gz klasor1 dosya
 ```
@@ -946,7 +947,7 @@ o -z			-->	 sıkıştırma işlemini gerçekleştirir
 o -c			-->	 yeni bir arşiv dosyası oluşturur
 o -v			-->	 arşiv işleminin ayrıntılarını ekranda gösterir
 o -f			-->	 arşiv dosyasının adının belirlemesini sağlar
-o my-file.tar.gz	-->	 oluşturulacak arşiv dosyasının adıdır.
+o my-file.tar.gz	-->	 oluşturulacak arşiv dosyasının adıdır
 o klasor1 dosya		-->	 arşiv dosyasına dahil edilecek klasörler ve dosyaların adlarıdır
 ```
 
@@ -963,7 +964,34 @@ o -x			-->	 arşiv dosyasından dosyaların çıkarılması için "extract" modu
 tar -zxvf my-file.tar.gz -C /edip
 ```
 ```bash
-o -C			-->	 arşiv dosyasındaki dosyaların çıkarılacağı dizini belirtir.
+o -C			-->	 arşiv dosyasındaki dosyaların çıkarılacağı dizini belirtir
+```
+
+## zip komutu kullanimi
+
+### • Bu komut dosyalari "zip" ile sikistirmak icin kullanilir
+```bash
+zip -r dosya.zip dosya_yada_klasor
+```
+```bash
+o zip			-->	 dosya veya klasörleri bir ZIP arşiv dosyasına sıkıştırmak için kullanılır
+o -r			-->	 belirtilen klasörün içindeki tüm alt klasörleri de arşive eklemeyi sağlar
+o dosya.zip		-->	 oluşturulacak arşiv dosyasının adıdır
+o dosya_yada_klasor	-->	 sikistirilacak klasör yada dosyalar burada belirtilir
+```
+
+### • Bu komut "zip" ile sikistirilmis dosyalari cikarmak icin kullanilir
+```bash
+unzip dosya.zip
+```
+
+### • Bu komut "zip" ile sikistirilmis sifreli dosyalari cikarmak icin kullanilir
+```bash
+unzip -P sifre dosya.zip
+```
+```bash
+o -P			-->	 sifre girilecegini belirtir
+o sifre			-->	 dosyalari cikarmak icin gerekli sifre yazilir
 ```
 
 ## Go to [Index](#index)
