@@ -11,7 +11,7 @@
 * [Genel Komutlar](#genel-komutlar)
 * [Ortam Degiskenleri](#ortam-degiskenleri)
 * [Kullanici Komutlari](#kullanici-komutlari)
-* [Paket Yükleme Islemleri](#paket-yükleme-islemleri)
+* [Paket Yükleme ve Kaldirma Islemleri](#paket-yükleme-ve-kaldirma-islemleri)
 * [Filtre Kullanim Komutlari](#filtre-kullanim-komutlari)
 * [Dosya Sikistirma ve Acma Komutlari](#dosya-sikistirma-ve-acma-komutlari)
 * [Sed, Awk ve Crontab Komutlari](#sed-awk-ve-crontab-komutlari)
@@ -691,7 +691,7 @@ sudo gpasswd –d edip aws
 
 ## Go to [Index](#index)
 
-# PAKET YÜKLEME ISLEMLERI
+# PAKET YÜKLEME VE KALDIRMA ISLEMLERI
 
 ### • Linuxte yüklü bütün paketleri güncellemek icin kullanilir
 ```bash
@@ -730,6 +730,16 @@ sudo yum remove git
 ### • Ubuntu makinede git uygulamasini kaldirmak icin kullanilir
 ```bash
 sudo apt remove git 
+```
+
+### • Ubuntu makinede önbellekte tutulan eski ve indirilmiş paketlerin temizlenmesini sağlar
+```bash
+sudo apt-get clean -y
+```
+
+### • Ubuntu makinede indirilmiş paketlerin önbellekteki sürümlerini temizler, ancak yüklü olanları silmez
+```bash
+sudo apt autoclean -y
 ```
 
 ### • Linuxte git uygulamasini tüm ek baglantilari ve yapilandirma paketleri ile birlikte onay istemeden kaldirir
