@@ -946,7 +946,7 @@ echo –e “ahmet \n murat”
 
 # DOSYA SIKISTIRMA VE ACMA KOMUTLARI
 
-## tar komutu kullanimi
+## "tar" komutu kullanimi
 
 ### • Bu komut dosyalari "tar" ile sikistirmak icin kullanilir
 ```bash
@@ -978,7 +978,7 @@ tar -zxvf my-file.tar.gz -C /edip
 o -C			-->	 arşiv dosyasındaki dosyaların çıkarılacağı dizini belirtir
 ```
 
-## zip komutu kullanimi
+## "zip" komutu kullanimi
 
 ### • Bu komut dosyalari "zip" ile sikistirmak icin kullanilir
 ```bash
@@ -1003,6 +1003,25 @@ unzip -P sifre dosya.zip
 ```bash
 o -P			-->	 sifre girilecegini belirtir
 o sifre			-->	 dosyalari cikarmak icin gerekli sifre yazilir
+```
+
+## "gzip" komutu kullanimi
+
+### • Bu komut dosyalari "gzip" ile sikistirmak icin kullanilir
+```bash
+gzip -9 my-file
+```
+```bash
+o gzip			-->	 dosya veya klasörleri bir ZIP arşiv dosyasına sıkıştırmak için kullanılır
+o -9			-->	 sıkıştırma seviyesini belirler ve en yüksek sıkıştırma seviyesini ifade eder
+o -1			-->	 en hızlı sıkıştırma seviyesidir ve en düşük sıkıştırma oranını sağlar
+o -6			-->	 varsayilan sikistirma seviyesidir
+o my-file		-->	 sikistirilacak olan dosyayi belirtir. Sıkıştırılmış dosya "dosya.gz" adıyla aynı dizine kaydedilir ve orijinal dosya yerinde kalır
+```
+
+### • Bu komut "gzip" ile sikistirilmis dosyalari cikarmak icin kullanilir
+```bash
+gunzip dosya.gz
 ```
 
 ## Go to [Index](#index)
