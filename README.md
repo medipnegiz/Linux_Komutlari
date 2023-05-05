@@ -985,7 +985,7 @@ o -C			-->	 arşiv dosyasındaki dosyaların çıkarılacağı dizini belirtir
 zip -r dosya.zip dosya_yada_klasor
 ```
 ```bash
-o zip			-->	 dosya veya klasörleri bir ZIP arşiv dosyasına sıkıştırmak için kullanılır
+o zip			-->	 dosya veya klasörleri bir arşiv dosyasına sıkıştırmak için kullanılır
 o -r			-->	 belirtilen klasörün içindeki tüm alt klasörleri de arşive eklemeyi sağlar
 o dosya.zip		-->	 oluşturulacak arşiv dosyasının adıdır
 o dosya_yada_klasor	-->	 sikistirilacak klasör yada dosyalar burada belirtilir
@@ -1012,7 +1012,7 @@ o sifre			-->	 dosyalari cikarmak icin gerekli sifre yazilir
 gzip -9 my-file
 ```
 ```bash
-o gzip			-->	 dosya veya klasörleri bir ZIP arşiv dosyasına sıkıştırmak için kullanılır
+o gzip			-->	 dosya veya klasörleri bir arşiv dosyasına sıkıştırmak için kullanılır
 o -9			-->	 sıkıştırma seviyesini belirler ve en yüksek sıkıştırma seviyesini ifade eder
 o -1			-->	 en hızlı sıkıştırma seviyesidir ve en düşük sıkıştırma oranını sağlar
 o -6			-->	 varsayilan sikistirma seviyesidir
@@ -1022,6 +1022,31 @@ o my-file		-->	 sikistirilacak olan dosyayi belirtir. Sıkıştırılmış dosya
 ### • Bu komut "gzip" ile sikistirilmis dosyalari cikarmak icin kullanilir
 ```bash
 gunzip dosya.gz
+```
+
+## "rar" komutu kullanimi
+
+### • Bu komut dosyalari "rar" ile sikistirmak icin kullanilir
+```bash
+rar a -ap my-file.rar dosya_yada_klasor
+```
+```bash
+o rar			-->	 dosya veya klasörleri bir arşiv dosyasına sıkıştırmak için kullanılır
+o a			-->	 "add" kelimesinin kısaltmasıdır ve RAR arşivi oluşturma veya mevcut bir arşive dosya eklemek için kullanılir
+o -a			-->	 sıkıştırma metodu olarak otomatik modun kullanılmasını sağlar
+o -p			-->	 sıkıştırma parolasını "my-file.rar" dosyasına ekleme özelliğini etkinleştirir
+o my-file.rar		-->	 oluşturulacak arşiv dosyasının adıdır
+o dosya_yada_klasor	-->	 sikistirilacak klasör yada dosyalar burada belirtilir
+```
+
+### • Bu komut "rar" ile sikistirilmis dosyalari acmak icin kullanilir
+```bash
+unrar e -p Sifre my-file.rar
+```
+```bash
+o e			-->	 arşiv dosyasındaki tüm dosyaların çıkarılmasını sağlar.
+o -p			-->	 sifre girilecegini belirtir
+o Sifre			-->	 dosyalari cikarmak icin gerekli sifre yazilir
 ```
 
 ## Go to [Index](#index)
