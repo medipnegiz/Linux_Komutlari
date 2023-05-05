@@ -13,6 +13,7 @@
 * [Kullanici Komutlari](#kullanici-komutlari)
 * [Paket Yükleme Islemleri](#paket-yükleme-islemleri)
 * [Filtre Kullanim Komutlari](#filtre-kullanim-komutlari)
+* [Dosya Sikistirma ve Acma Komutlari](#dosya-sikistirma-ve-acma-komutlari)
 * [Sed, Awk ve Crontab Komutlari](#sed-awk-ve-crontab-komutlari)
 * [Sistem ile Ilgili Komutlar](#sistem-ile-ilgili-komutlar)
 * [Uzak Bilgisayar Baglanti Komutlari](#uzak-bilgisayar-baglanti-komutlari)
@@ -928,6 +929,41 @@ echo –e “ahmet \n murat”
 ### • “1 --> standart output” cikti degerini cikti.txt icine kaydet.  “2 --> standart error” ciktida hata varsa hatayi error.txt icine kaydet
 ```bash
 ./myscript 1> cikti.txt 2> error.txt
+```
+
+## Go to [Index](#index)
+
+# DOSYA SIKISTIRMA VE ACMA KOMUTLARI
+## tar komutu kullanimi
+
+### • Bu komut dosya sikistirmak icin kullanilir
+```bash
+tar -zcvf my-file.tar.gz klasor1 dosya
+```
+```bash
+o tar			-->	 dosyaları bir arşiv dosyasına eklemek için kullanılır
+o -z			-->	 sıkıştırma işlemini gerçekleştirir
+o -c			-->	 yeni bir arşiv dosyası oluşturur
+o -v			-->	 arşiv işleminin ayrıntılarını ekranda gösterir
+o -f			-->	 arşiv dosyasının adının belirlemesini sağlar
+o my-file.tar.gz	-->	 oluşturulacak arşiv dosyasının adıdır.
+o klasor1 dosya		-->	 arşiv dosyasına dahil edilecek klasörler ve dosyaların adlarıdır
+```
+
+### • Bu komut sikistirilmis tar.gz dosyalarini acmak icin kullanilir
+```bash
+tar -zxvf my-file.tar.gz 
+```
+```bash
+o -x			-->	 arşiv dosyasından dosyaların çıkarılması için "extract" modunu belirtir
+```
+
+### • Bu komut sikistirilmis tar.gz dosyalari belirli bir klasörün icine cikarmak icin kullanilir
+```bash
+tar -zxvf my-file.tar.gz -C /edip
+```
+```bash
+o -C			-->	 arşiv dosyasındaki dosyaların çıkarılacağı dizini belirtir.
 ```
 
 ## Go to [Index](#index)
