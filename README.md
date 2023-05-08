@@ -1141,7 +1141,8 @@ mkfs
 
 ### • Bilgisayarda ne kadar RAM kullanildigini gösterir
 ```bash
-top
+o top		-->	Liste seklinde gösterim yapar
+o htop 		-->	daha görsel bir arayüze sahiptir ve bellek tüketimiyle ilgili daha fazla ayrıntı sağlar
 ```
 
 ### • Diskin kullanim durumunu listelemek icin kullanilir
