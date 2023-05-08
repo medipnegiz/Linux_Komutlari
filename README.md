@@ -1144,8 +1144,20 @@ mkfs
 nice -n 19
 ```
 ```bash
-o -n		-->	(--classdata) işlem önceliğini belirtir. Islem önceliği seviyeleri -20 ile 19 arasındadır. -20 en yüksek önceligi, 19 en düşük önceliği temsil eder. Default 0
-o 19 		-->	islem önceligi seviyesi girilir
+o -n		-->	(--classdata) işlem önceliğini belirtmek icin kullanilir 
+o 19 		-->	islem önceligi seviyesi girilir. Islem önceliği seviyeleri -20 ile 19 arasındadır
+			-20 en yüksek önceligi, 19 en düşük önceliği temsil eder. Default 0
+```
+
+### • Bu komut bir işlem için disk I/O önceliğini ayarlamak için kullanılır
+```bash
+ionice -c2 -n7
+```
+```bash
+o -c		-->	(--class) işlem sınıfını belirtir. Bu öncelik seviyeleri üç sınıfa ayrılır
+			1:real-time -> yüksek, 2:best-effort -> orta ve 3:idle -> düsük
+o -n 		-->	islem önceligi seviyesi girilir. Islem önceligi seviyeleri 0 ile 7 arasındadir
+			0 en yüksek önceligi, 7 en düsük önceligi temsil eder.
 ```
 
 ### • Bilgisayarda ne kadar RAM kullanildigini gösterir
