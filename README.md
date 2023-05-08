@@ -1154,9 +1154,9 @@ o 19 		-->	islem önceligi seviyesi girilir. Islem önceliği seviyeleri -20 ile
 ionice -c2 -n7
 ```
 ```bash
-o -c		-->	(--class) işlem sınıfını belirtir. Bu öncelik seviyeleri üç sınıfa ayrılır
+o -c2		-->	(--class) işlem sınıfını belirtir. Bu öncelik seviyeleri üç sınıfa ayrılır
 			1:real-time -> yüksek, 2:best-effort -> orta ve 3:idle -> düsük
-o -n 		-->	islem önceligi seviyesi girilir. Islem önceligi seviyeleri 0 ile 7 arasındadir
+o -n7 		-->	islem önceligi seviyesi girilir. Islem önceligi seviyeleri 0 ile 7 arasındadir
 			0 en yüksek önceligi, 7 en düsük önceligi temsil eder.
 ```
 
