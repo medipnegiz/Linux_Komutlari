@@ -1141,17 +1141,18 @@ mkfs
 
 ### • Bu komut bir işlem için CPU öncelik seviyesi ayarlamak için kullanılır
 ```bash
-nice -n 19
+nice -n 19 git-backup
 ```
 ```bash
 o -n		-->	(--classdata) işlem önceliğini belirtmek icin kullanilir 
 o 19 		-->	islem önceligi seviyesi girilir. Islem önceliği seviyeleri -20 ile 19 arasındadır
 			-20 en yüksek önceligi, 19 en düşük önceliği temsil eder. Default 0
+o git-backup	-->	islemi önceligi belirlenen komut girilir		
 ```
 
 ### • Bu komut bir işlem için disk I/O önceliğini ayarlamak için kullanılır
 ```bash
-ionice -c2 -n7
+ionice -c2 -n7 git-backup
 ```
 ```bash
 o -c2		-->	(--class) işlem sınıfını belirtir. Bu öncelik seviyeleri üç sınıfa ayrılır
