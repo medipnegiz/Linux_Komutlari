@@ -407,6 +407,16 @@ o -S		--<	(show-error) eger basarisiz olursa bir hata mesaji almak icin kullanil
 echo edip | xargs –I {} echo {} {} 	# büyük i
 ```
 
+### • Bu komut belirli bir süre aralığında bir komutu tekrar tekrar çalıştırmak için kullanılır. 
+```bash
+watch -n 1 'ls -al'
+```
+```bash
+o -n 		--> 	tekrarlama aralığını saniye cinsinden belirtir    
+o 1 		--> 	kac saniyede araliklarla ekrani yenileyecegini belirtir
+o 'ls -al'	-->	calistirilacak komut girilir
+```
+
 ## Go to [Index](#index)
 
 # ORTAM DEGISKENLERI
