@@ -1139,6 +1139,15 @@ crontab –e
 mkfs
 ```
 
+### • Bu komut bir işlem için CPU öncelik seviyesi ayarlamak için kullanılır
+```bash
+nice -n 19
+```
+```bash
+o -n		-->	(--classdata) işlem önceliğini belirtir. Islem önceliği seviyeleri -20 ile 19 arasındadır. -20 en yüksek önceligi, 19 en düşük önceliği temsil eder. Default 0
+o 19 		-->	islem önceligi seviyesi girilir
+```
+
 ### • Bilgisayarda ne kadar RAM kullanildigini gösterir
 ```bash
 o top		-->	Liste seklinde gösterim yapar
