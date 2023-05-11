@@ -906,6 +906,10 @@ comm file1.txt file2.txt
 ```bash
 diff “test-1.txt” “test-2.txt”
 ```
+```bash
+ o -r 		-->	(recursive) bir klasörün icindeki dosyalari karsilastirmak icin kullanilir
+ o -u 		-->	(Unified) formatinda farklari görüntülemek icin kullanilir
+ ```
 
 ### • Tek satirda birden fazla komut verilebilir. “&&” ilk komut basarili ise diger komutu calistirir
 ```bash
