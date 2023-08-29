@@ -807,6 +807,15 @@ sudo yum install git-2.14.5-1.amzn2
 sudo yum update git –y
 ```
 
+### • Debian tabanlı Linux dağıtımlarında paket yönetimi işlemlerini gerçekleştirmek için kullanılan bir komuttur
+```bash
+o dpkg -i <paket_adi>.deb	-->	Bu komut, belirtilen .deb uzantılı paket dosyasını kurar
+o dpkg -r <paket_adi>		-->	Belirtilen paketi kaldırır
+o dpkg -l			-->	Sistemde kurulu olan tüm paketleri listeler
+o dpkg -p <paket_adi>		-->	Belirtilen paket hakkinda bilgi verir
+o dpkg -S <dosya_adi>		-->	Belirtilen dosyanin hangi pakete ait oldugunu bulur
+```
+
 ## Go to [Index](#index)
 
 # FILTRE KULLANIM KOMUTLARI
